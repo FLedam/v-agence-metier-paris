@@ -1,0 +1,1967 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V Agence Métier Paris | Recrutement Executive & Conseil Carrière</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --noir: #080808;
+  --anthracite: #1c1c1c;
+  --gris: #2e2e2e;
+  --gris-clair: #5a5a5a;
+  --blanc-casse: #f4f0eb;
+  --creme: #e8e2d9;
+  --bordeaux: #6b1a1a;
+  --bordeaux-clair: #8b2222;
+  --or: #b8965a;
+  --or-clair: #d4aa6e;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  background: var(--noir);
+  color: var(--blanc-casse);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─── */
+.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, rgba(8,8,8,0.98) 0%, rgba(8,8,8,0.0) 100%);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--blanc-casse);
+}
+
+.nav-logo svg { width: 38px; height: 38px; }
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nav-brand-main {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--blanc-casse);
+}
+
+.nav-brand-sub {
+  font-size: 0.55rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  color: var(--or);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--creme);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover { opacity: 1; }
+
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+}
+
+/* ─── SCREENS ─── */
+.screen {
+  display: none;
+  min-height: 100vh;
+}
+.screen.active { display: block; }
+
+/* ─── HERO ─── */
+#screen-home {
+  position: relative;
+  background: var(--noir);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 110%, rgba(107,26,26,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(184,150,90,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.04;
+}
+
+.hero-lines::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 10%;
+  width: 1px;
+  height: 200%;
+  background: linear-gradient(to bottom, transparent, var(--or), transparent);
+  animation: linePulse 8s ease-in-out infinite;
+}
+
+.hero-lines::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: 15%;
+  width: 1px;
+  height: 200%;
+  background: linear-gradient(to bottom, transparent, var(--bordeaux-clair), transparent);
+  animation: linePulse 10s ease-in-out infinite 2s;
+}
+
+@keyframes linePulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.hero-content {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 7rem 2rem 4rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.3s;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--blanc-casse);
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.5s;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--or-clair);
+}
+
+.hero-subtitle {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--creme);
+  max-width: 560px;
+  opacity: 0.75;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.7s;
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.9s;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--bordeaux-clair);
+  color: var(--blanc-casse);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--bordeaux);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover { color: var(--blanc-casse); }
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.hero-separator {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--or), transparent);
+  margin: 3rem auto 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1.1s;
+}
+
+.hero-features {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1.3s;
+}
+
+.hero-feature {
+  text-align: center;
+}
+
+.hero-feature-icon {
+  font-size: 1.1rem;
+  color: var(--or);
+  margin-bottom: 0.5rem;
+}
+
+.hero-feature-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gris-clair);
+  font-weight: 400;
+}
+
+/* Section présentation */
+.about-section {
+  background: var(--anthracite);
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(184,150,90,0.1);
+}
+
+.about-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.about-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--blanc-casse);
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: rgba(244,240,235,0.65);
+  font-weight: 300;
+}
+
+.about-text + .about-text { margin-top: 1rem; }
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stat {
+  border-left: 1px solid var(--bordeaux);
+  padding-left: 1.5rem;
+}
+
+.stat-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--blanc-casse);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gris-clair);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── QUESTIONNAIRE ─── */
+#screen-quiz {
+  background: var(--noir);
+  padding: 6rem 1.5rem 3rem;
+  min-height: 100vh;
+}
+
+.quiz-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.quiz-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 0.75rem;
+}
+
+.quiz-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--blanc-casse);
+  margin-bottom: 0.5rem;
+}
+
+.quiz-subtitle {
+  font-size: 0.75rem;
+  color: rgba(244,240,235,0.5);
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Progress */
+.progress-bar-wrap {
+  background: rgba(255,255,255,0.06);
+  height: 2px;
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--bordeaux), var(--or));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: var(--gris-clair);
+  text-align: right;
+  margin-bottom: 2.5rem;
+}
+
+/* Question card */
+.question-card {
+  background: var(--anthracite);
+  border: 1px solid rgba(184,150,90,0.08);
+  padding: 2.5rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.5s ease;
+}
+
+@media (max-width: 480px) {
+  .question-card { padding: 1.5rem; }
+}
+
+.question-num {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bordeaux-clair);
+  margin-bottom: 1rem;
+}
+
+.question-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--blanc-casse);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(244,240,235,0.75);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: rgba(107,26,26,0.2);
+  transition: width 0.3s;
+}
+
+.option-btn:hover {
+  border-color: rgba(107,26,26,0.5);
+  color: var(--blanc-casse);
+}
+
+.option-btn:hover::before { width: 100%; }
+
+.option-btn.selected {
+  border-color: var(--bordeaux-clair);
+  background: rgba(107,26,26,0.15);
+  color: var(--blanc-casse);
+}
+
+.option-btn span { position: relative; z-index: 1; }
+
+.option-letter {
+  display: inline-block;
+  width: 20px;
+  font-size: 0.65rem;
+  color: var(--or);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+}
+
+/* Quiz nav */
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(244,240,235,0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(255,255,255,0.3);
+  color: var(--blanc-casse);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.quiz-counter {
+  font-size: 0.65rem;
+  color: var(--gris-clair);
+  letter-spacing: 0.1em;
+}
+
+/* ─── LOADING ─── */
+#screen-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--noir);
+  text-align: center;
+}
+
+.loading-logo {
+  margin-bottom: 3rem;
+}
+
+.loading-logo svg { width: 60px; height: 60px; }
+
+.loading-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--blanc-casse);
+  margin-bottom: 0.5rem;
+}
+
+.loading-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 2.5rem;
+}
+
+.loading-dots {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.loading-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--bordeaux-clair);
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) { animation-delay: 0.3s; }
+.loading-dot:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.loading-steps {
+  max-width: 300px;
+  text-align: left;
+}
+
+.loading-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.7rem;
+  color: rgba(244,240,235,0.3);
+  transition: color 0.5s, opacity 0.5s;
+}
+
+.loading-step.done { color: rgba(184,150,90,0.7); }
+.loading-step.active { color: var(--blanc-casse); }
+
+.step-check {
+  width: 14px;
+  height: 14px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+.loading-step.done .step-check::after { content: '✓'; }
+.loading-step.active .step-check::after { content: '◆'; font-size: 0.4rem; }
+
+/* ─── RESULTS ─── */
+#screen-result {
+  background: var(--noir);
+  padding: 0;
+  min-height: 100vh;
+}
+
+.result-hero {
+  background: var(--anthracite);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(184,150,90,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.result-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(107,26,26,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.result-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.2s;
+}
+
+.result-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--blanc-casse);
+  margin-bottom: 0.75rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.4s;
+}
+
+.result-intro {
+  font-size: 0.78rem;
+  color: rgba(244,240,235,0.55);
+  line-height: 1.8;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.6s;
+}
+
+/* Coach card */
+.coach-section {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.coach-card {
+  background: var(--anthracite);
+  border: 1px solid rgba(184,150,90,0.12);
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.3s;
+}
+
+.coach-top {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+}
+
+@media (max-width: 580px) {
+  .coach-top { grid-template-columns: 1fr; }
+}
+
+.coach-photo-wrap {
+  background: var(--gris);
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+}
+
+.coach-photo-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.coach-info {
+  padding: 2.5rem;
+}
+
+.coach-specialty {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bordeaux-clair);
+  margin-bottom: 0.75rem;
+}
+
+.coach-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--blanc-casse);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.coach-quote {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(184,150,90,0.8);
+  line-height: 1.5;
+  margin: 1.25rem 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--bordeaux);
+}
+
+.coach-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.coach-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  color: rgba(244,240,235,0.6);
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--or);
+  flex-shrink: 0;
+}
+
+.coach-bio-section {
+  padding: 2rem 2.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.coach-bio-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--or);
+  margin-bottom: 1rem;
+}
+
+.coach-bio {
+  font-size: 0.8rem;
+  line-height: 1.9;
+  color: rgba(244,240,235,0.6);
+  font-weight: 300;
+}
+
+/* Match score bar */
+.match-section {
+  padding: 1.5rem 2.5rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.match-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gris-clair);
+  margin-bottom: 0.5rem;
+}
+
+.match-bar-wrap {
+  background: rgba(255,255,255,0.06);
+  height: 3px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.match-bar-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--bordeaux), var(--or));
+  border-radius: 2px;
+}
+
+.match-pct {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--blanc-casse);
+  margin-top: 0.5rem;
+}
+
+/* CTA zone */
+.result-cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.result-cta-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--blanc-casse);
+  margin-bottom: 0.75rem;
+}
+
+.result-cta-text {
+  font-size: 0.76rem;
+  color: rgba(244,240,235,0.5);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-restart {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(244,240,235,0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-restart:hover {
+  border-color: rgba(255,255,255,0.3);
+  color: var(--blanc-casse);
+}
+
+/* ─── ADMIN MODE ─── */
+.admin-panel {
+  background: #0a0a12;
+  border: 1px solid rgba(107,26,26,0.5);
+  margin: 2rem;
+  padding: 2rem;
+  font-family: 'Courier New', monospace;
+}
+
+.admin-title {
+  color: var(--bordeaux-clair);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(107,26,26,0.3);
+}
+
+.admin-clan {
+  font-size: 1.2rem;
+  color: var(--or);
+  margin-bottom: 1rem;
+}
+
+.admin-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-score-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-score-name {
+  width: 120px;
+  font-size: 0.7rem;
+  color: var(--creme);
+  opacity: 0.7;
+}
+
+.admin-score-bar-wrap {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  height: 10px;
+}
+
+.admin-score-bar {
+  height: 100%;
+  background: var(--bordeaux-clair);
+  transition: width 1s ease;
+}
+
+.admin-score-bar.top { background: var(--or); }
+
+.admin-score-num {
+  width: 30px;
+  font-size: 0.7rem;
+  color: var(--or);
+  text-align: right;
+}
+
+.admin-section-title {
+  font-size: 0.65rem;
+  color: var(--bordeaux-clair);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(107,26,26,0.2);
+}
+
+.admin-mapping {
+  font-size: 0.68rem;
+  color: rgba(244,240,235,0.45);
+  line-height: 1.9;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--anthracite);
+  border-top: 1px solid rgba(184,150,90,0.08);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
+
+.footer-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: var(--blanc-casse);
+  margin-bottom: 0.3rem;
+}
+
+.footer-tagline {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gris-clair);
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(244,240,235,0.3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(--or); }
+
+.footer-legal {
+  font-size: 0.58rem;
+  color: rgba(244,240,235,0.18);
+  line-height: 1.8;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--noir); }
+::-webkit-scrollbar-thumb { background: var(--bordeaux); }
+
+/* ─── UTILS ─── */
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showScreen('home'); return false;">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Eiffel Tower silhouette (subtle, background) -->
+      <path d="M50 10 L44 30 L38 30 L36 35 L43 35 L39 58 L35 58 L33 65 L42 65 L40 82 L36 82 L35 88 L65 88 L64 82 L60 82 L58 65 L67 65 L66 58 L62 58 L57 35 L64 35 L62 30 L56 30 Z"
+            fill="rgba(107,26,26,0.25)" stroke="rgba(184,150,90,0.15)" stroke-width="0.5"/>
+      <!-- V hand sign - index and middle fingers -->
+      <!-- Palm base -->
+      <ellipse cx="50" cy="78" rx="16" ry="10" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8"/>
+      <!-- Ring finger (bent) -->
+      <rect x="52" y="52" width="9" height="26" rx="4.5" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8" transform="rotate(3, 56, 65)"/>
+      <!-- Pinky (bent) -->
+      <rect x="61" y="58" width="7" height="20" rx="3.5" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8" transform="rotate(8, 65, 68)"/>
+      <!-- Thumb (bent) -->
+      <rect x="28" y="58" width="7" height="16" rx="3.5" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8" transform="rotate(-15, 31, 66)"/>
+      <!-- Middle finger (extended - left of V) -->
+      <rect x="36" y="18" width="10" height="46" rx="5" fill="var(--blanc-casse)" stroke="rgba(184,150,90,0.4)" stroke-width="0.8" transform="rotate(-8, 41, 41)"/>
+      <!-- Index finger (extended - right of V) -->
+      <rect x="50" y="20" width="10" height="44" rx="5" fill="var(--blanc-casse)" stroke="rgba(184,150,90,0.4)" stroke-width="0.8" transform="rotate(8, 55, 42)"/>
+      <!-- Gold accent dot -->
+      <circle cx="50" cy="95" r="2" fill="var(--or)" opacity="0.6"/>
+    </svg>
+    <div class="nav-brand">
+      <span class="nav-brand-main">V Agence Métier</span>
+      <span class="nav-brand-sub">Paris · Executive Search</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Notre approche</a></li>
+    <li><a href="#">Expertises</a></li>
+    <li><a href="#">Réseau</a></li>
+    <li><a href="#" onclick="startQuiz(); return false;">Évaluation</a></li>
+  </ul>
+</nav>
+
+<!-- ─── SCREEN: HOME ─── -->
+<div id="screen-home" class="screen active">
+  <div id="screen-home-inner">
+    <section style="position:relative; overflow:hidden;">
+      <div class="hero-bg"></div>
+      <div class="hero-lines"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Cabinet de Recrutement Executive · Paris, depuis 1998</div>
+        <h1 class="hero-title serif">
+          Votre potentiel mérite<br>les <em>bonnes opportunités.</em>
+        </h1>
+        <p class="hero-subtitle">
+          Notre réseau accompagne les profils d'exception vers des carrières à forte influence. Accédez à une sélection de postes de direction inaccessibles au marché ouvert.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="startQuiz()">
+            <span>Commencer l'évaluation</span>
+          </button>
+        </div>
+        <div class="hero-separator"></div>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <div class="hero-feature-icon">◆</div>
+            <div class="hero-feature-label">Réseau exclusif</div>
+          </div>
+          <div class="hero-feature">
+            <div class="hero-feature-icon">◆</div>
+            <div class="hero-feature-label">Coaching sur mesure</div>
+          </div>
+          <div class="hero-feature">
+            <div class="hero-feature-icon">◆</div>
+            <div class="hero-feature-label">Confidentialité absolue</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-inner">
+        <div>
+          <div class="about-label">Notre approche</div>
+          <h2 class="about-title serif">Une évaluation comportementale d'exception</h2>
+          <p class="about-text">
+            V Agence Métier Paris a développé une méthode propriétaire d'analyse comportementale permettant d'identifier avec précision le coach exécutif le mieux adapté à votre profil de leadership.
+          </p>
+          <p class="about-text" style="margin-top:1rem;">
+            Notre questionnaire, conçu en collaboration avec des psychologues organisationnels et des experts en développement du potentiel humain, révèle des dimensions de votre personnalité que les entretiens classiques ne permettent pas d'atteindre.
+          </p>
+          <div style="margin-top:2rem;">
+            <button class="btn-primary" onclick="startQuiz()">
+              <span>Accéder à l'évaluation →</span>
+            </button>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num serif">2 800+</div>
+            <div class="stat-label">Cadres accompagnés</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num serif">94%</div>
+            <div class="stat-label">Taux de satisfaction</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num serif">26 ans</div>
+            <div class="stat-label">D'expertise parisienne</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num serif">Top 50</div>
+            <div class="stat-label">Cabinets executive search</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-logo">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 10 L44 30 L38 30 L36 35 L43 35 L39 58 L35 58 L33 65 L42 65 L40 82 L36 82 L35 88 L65 88 L64 82 L60 82 L58 65 L67 65 L66 58 L62 58 L57 35 L64 35 L62 30 L56 30 Z" fill="rgba(107,26,26,0.3)"/>
+          <rect x="36" y="18" width="10" height="46" rx="5" fill="var(--blanc-casse)" opacity="0.7" transform="rotate(-8, 41, 41)"/>
+          <rect x="50" y="20" width="10" height="44" rx="5" fill="var(--blanc-casse)" opacity="0.7" transform="rotate(8, 55, 42)"/>
+        </svg>
+      </div>
+      <div class="footer-name serif">V Agence Métier Paris</div>
+      <div class="footer-tagline">Recrutement Executive · Conseil en Carrière · Accompagnement Dirigeants</div>
+      <div class="footer-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Nous contacter</a>
+        <a href="#">Espace candidat</a>
+        <a href="#">Espace entreprise</a>
+      </div>
+      <div class="footer-legal">
+        V Agence Métier Paris SAS · 47 avenue George V, 75008 Paris<br>
+        Tél. +33 (0)1 42 56 78 90 · contact@vagencemetier.fr<br>
+        © 2026 V Agence Métier Paris. Tous droits réservés.
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ─── SCREEN: QUIZ ─── -->
+<div id="screen-quiz" class="screen">
+  <div class="quiz-wrapper">
+    <div class="quiz-header">
+      <div class="quiz-label">Évaluation comportementale confidentielle</div>
+      <h2 class="quiz-title serif">Évaluation de votre profil de leadership</h2>
+      <p class="quiz-subtitle">
+        Ce questionnaire permet à nos consultants d'identifier le profil de coach le plus adapté à votre personnalité et à vos ambitions professionnelles. Répondez spontanément.
+      </p>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">Question 1 / 25</div>
+
+    <div id="questionContainer"></div>
+
+    <div class="quiz-nav">
+      <button class="btn-secondary" id="btnPrev" onclick="prevQuestion()" disabled>← Précédent</button>
+      <span class="quiz-counter" id="quizCounter">1 / 25</span>
+      <button class="btn-secondary" id="btnNext" onclick="nextQuestion()" disabled>Suivant →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SCREEN: LOADING ─── -->
+<div id="screen-loading" class="screen">
+  <div class="loading-logo">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 10 L44 30 L38 30 L36 35 L43 35 L39 58 L35 58 L33 65 L42 65 L40 82 L36 82 L35 88 L65 88 L64 82 L60 82 L58 65 L67 65 L66 58 L62 58 L57 35 L64 35 L62 30 L56 30 Z" fill="rgba(107,26,26,0.3)"/>
+      <rect x="36" y="18" width="10" height="46" rx="5" fill="var(--blanc-casse)" opacity="0.8" transform="rotate(-8, 41, 41)"/>
+      <rect x="50" y="20" width="10" height="44" rx="5" fill="var(--blanc-casse)" opacity="0.8" transform="rotate(8, 55, 42)"/>
+    </svg>
+  </div>
+  <div class="loading-text serif">Analyse de votre profil</div>
+  <div class="loading-sub">Traitement en cours</div>
+  <div class="loading-dots">
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+  </div>
+  <div class="loading-steps">
+    <div class="loading-step active" id="lstep1">
+      <div class="step-check"></div>
+      <span>Analyse des réponses comportementales</span>
+    </div>
+    <div class="loading-step" id="lstep2">
+      <div class="step-check"></div>
+      <span>Identification du profil de leadership</span>
+    </div>
+    <div class="loading-step" id="lstep3">
+      <div class="step-check"></div>
+      <span>Matching avec notre réseau de coachs</span>
+    </div>
+    <div class="loading-step" id="lstep4">
+      <div class="step-check"></div>
+      <span>Génération de votre recommandation</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SCREEN: RESULT ─── -->
+<div id="screen-result" class="screen">
+  <div class="result-hero">
+    <div class="result-label" style="position:relative;z-index:1;">Évaluation complétée · Confidentiel</div>
+    <h2 class="result-headline serif" style="position:relative;z-index:1;">Votre coach recommandé</h2>
+    <p class="result-intro" style="position:relative;z-index:1;">
+      Sur la base de votre profil comportemental, notre algorithme a identifié le consultant le mieux aligné avec votre style de leadership et vos ambitions.
+    </p>
+  </div>
+
+  <div class="coach-section">
+    <div class="coach-card" id="coachCard">
+      <div class="coach-top">
+        <div class="coach-photo-wrap" id="coachPhotoWrap">
+          <!-- SVG portrait injected by JS -->
+        </div>
+        <div class="coach-info">
+          <div class="coach-specialty" id="coachSpecialty"></div>
+          <div class="coach-name serif" id="coachName"></div>
+          <div class="coach-quote" id="coachQuote"></div>
+          <div class="coach-contact">
+            <div class="coach-contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+              </svg>
+              <span id="coachPhone"></span>
+            </div>
+            <div class="coach-contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+              </svg>
+              <span id="coachEmail"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="match-section">
+        <div class="match-label">Compatibilité de profil</div>
+        <div class="match-bar-wrap">
+          <div class="match-bar-fill" id="matchBarFill" style="width:0%"></div>
+        </div>
+        <div class="match-pct serif" id="matchPct">—</div>
+      </div>
+
+      <div class="coach-bio-section">
+        <div class="coach-bio-label">Biographie</div>
+        <p class="coach-bio" id="coachBio"></p>
+      </div>
+    </div>
+
+    <!-- Admin panel (hidden by default) -->
+    <div class="admin-panel hidden" id="adminPanel">
+      <div class="admin-title">⚠ Mode MJ — Données confidentielles</div>
+      <div class="admin-clan" id="adminClanName"></div>
+      <div class="admin-section-title">Scores par clan</div>
+      <div class="admin-scores" id="adminScores"></div>
+      <div class="admin-section-title">Mapping réponses → clans</div>
+      <div class="admin-mapping" id="adminMapping"></div>
+    </div>
+
+    <div class="result-cta">
+      <h3 class="result-cta-title serif">Prendre contact avec votre coach</h3>
+      <p class="result-cta-text">
+        Votre évaluation a été transmise en toute confidentialité à votre consultant dédié.<br>
+        Il vous contactera dans les 48h ouvrées pour convenir d'un premier entretien.
+      </p>
+      <button class="btn-primary" style="display:inline-block;" onclick="void 0">
+        <span>Confirmer mon intérêt</span>
+      </button>
+      <br>
+      <button class="btn-restart" onclick="restartQuiz()">Recommencer l'évaluation</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-name serif">V Agence Métier Paris</div>
+    <div class="footer-tagline">Recrutement Executive · Conseil en Carrière · Accompagnement Dirigeants</div>
+    <div class="footer-legal">
+      47 avenue George V, 75008 Paris · +33 (0)1 42 56 78 90 · contact@vagencemetier.fr<br>
+      © 2026 V Agence Métier Paris. Tous droits réservés.
+    </div>
+  </footer>
+</div>
+
+<script>
+// ─────────────────────────────────────────────
+// DATA: QUESTIONS & CLAN SCORING
+// ─────────────────────────────────────────────
+
+const CLANS = {
+  VE: 'Ventrue',
+  TO: 'Toreador',
+  BR: 'Brujah',
+  NO: 'Nosferatu',
+  TR: 'Tremere',
+  GA: 'Gangrel',
+  MA: 'Malkavian',
+  BA: 'Banu Haqim',
+  LA: 'Lasombra',
+  HE: 'Hecata'
+};
+
+const questions = [
+  {
+    text: "Quel environnement de travail vous permet de donner le meilleur de vous-même ?",
+    options: [
+      { text: "Un cadre structuré, avec une hiérarchie claire, des protocoles définis et des objectifs mesurables", scores: { VE: 3, BA: 1 } },
+      { text: "Un espace créatif et esthétiquement stimulant, entouré d'excellence et de beauté", scores: { TO: 3, MA: 1 } },
+      { text: "Un environnement dynamique et exigeant où je peux challenger les conventions et provoquer le changement", scores: { BR: 3, GA: 1 } },
+      { text: "Un cadre discret, autonome, avec un accès privilégié aux informations stratégiques", scores: { NO: 3, TR: 1 } }
+    ]
+  },
+  {
+    text: "Face à un désaccord significatif avec votre direction, quelle est votre première réaction ?",
+    options: [
+      { text: "Je cherche un compromis diplomatique en m'appuyant sur des arguments institutionnels solides", scores: { VE: 2, BA: 1 } },
+      { text: "Je défends ma position avec conviction et passion, même si cela crée des tensions", scores: { BR: 3, TO: 1 } },
+      { text: "J'observe, je collecte davantage d'informations, puis j'agis au moment le plus opportun", scores: { NO: 3, LA: 1 } },
+      { text: "J'analyse la situation avec méthode et présente une argumentation logique irréfutable", scores: { TR: 2, BA: 2 } }
+    ]
+  },
+  {
+    text: "Qu'est-ce qui vous motive davantage dans une carrière d'exception ?",
+    options: [
+      { text: "L'influence réelle sur les décisions stratégiques et l'accès aux cercles de pouvoir", scores: { VE: 2, LA: 2 } },
+      { text: "La création, la reconnaissance artistique ou culturelle, laisser une empreinte esthétique", scores: { TO: 3, MA: 1 } },
+      { text: "La liberté totale, l'indépendance et la capacité à refuser ce qui ne me correspond pas", scores: { GA: 3, BR: 1 } },
+      { text: "La transmission d'un héritage, construire quelque chose qui perdurera après soi", scores: { HE: 3, VE: 1 } }
+    ]
+  },
+  {
+    text: "Comment décririez-vous votre style naturel de leadership ?",
+    options: [
+      { text: "Autoritaire et visionnaire : je trace la direction et j'attends que les équipes suivent", scores: { VE: 3, LA: 1 } },
+      { text: "Inspirant et charismatique : j'embarque les équipes par l'émotion et l'exemplarité", scores: { TO: 2, LA: 2 } },
+      { text: "Catalyseur : je secoue les structures, provoque les remises en question nécessaires", scores: { BR: 3, MA: 1 } },
+      { text: "Analytique et méthodique : j'avance par étapes calculées et refuse le hasard", scores: { TR: 3, BA: 1 } }
+    ]
+  },
+  {
+    text: "Quelle qualité vous décrit le mieux dans votre vie professionnelle ?",
+    options: [
+      { text: "L'ambition disciplinée et la rigueur dans l'exécution", scores: { VE: 3, BA: 1 } },
+      { text: "La sensibilité, l'élégance et le sens aigu de l'excellence", scores: { TO: 3, HE: 1 } },
+      { text: "La discrétion absolue et la capacité à percevoir ce que les autres ne voient pas", scores: { NO: 3, TR: 1 } },
+      { text: "L'intuition foudroyante et la capacité à anticiper des situations imprévisibles", scores: { MA: 3, GA: 1 } }
+    ]
+  },
+  {
+    text: "Quel type de réseau professionnel entretenez-vous ?",
+    options: [
+      { text: "Un réseau élite, soigneusement sélectionné, composé exclusivement de décideurs", scores: { VE: 3, LA: 1 } },
+      { text: "Un réseau créatif et culturel influent, dans les arts, le luxe, les médias", scores: { TO: 3, MA: 1 } },
+      { text: "Un réseau engagé, souvent en marge des institutions, partageant des valeurs fortes", scores: { BR: 3, GA: 1 } },
+      { text: "Un réseau invisible mais stratégiquement puissant, construit dans la discrétion", scores: { NO: 2, TR: 1, LA: 1 } }
+    ]
+  },
+  {
+    text: "Comment gérez-vous les informations sensibles et confidentielles ?",
+    options: [
+      { text: "Avec une discrétion absolue et une loyauté totale envers mon organisation", scores: { VE: 2, TR: 2 } },
+      { text: "Je les analyse pour en extraire des leviers d'influence au moment stratégique", scores: { LA: 3, NO: 1 } },
+      { text: "Je les documente et les classe méthodiquement pour une utilisation future optimale", scores: { NO: 2, TR: 2 } },
+      { text: "Je les traite selon un cadre éthique et légal strict, sans compromis", scores: { BA: 3, HE: 1 } }
+    ]
+  },
+  {
+    text: "Quelle relation entretenez-vous avec les règles et les procédures institutionnelles ?",
+    options: [
+      { text: "Les règles sont la fondation de toute organisation efficace : je les respecte et les fais respecter", scores: { VE: 2, BA: 2 } },
+      { text: "Les règles méritent d'être questionnées dès qu'elles freinent le progrès ou la liberté", scores: { BR: 3, GA: 1 } },
+      { text: "Les règles ont une logique interne qu'il faut décoder pour mieux les utiliser à son avantage", scores: { TR: 2, LA: 2 } },
+      { text: "Je reconnais leur utilité mais je me fie d'abord à mon instinct et à mon expérience terrain", scores: { GA: 3, MA: 1 } }
+    ]
+  },
+  {
+    text: "Comment prenez-vous une décision particulièrement difficile ?",
+    options: [
+      { text: "En consultant les personnes les plus expérimentées et les plus légitimes de mon réseau", scores: { VE: 2, HE: 2 } },
+      { text: "En faisant confiance à mon intuition et à ma lecture instinctive de la situation", scores: { MA: 3, TO: 1 } },
+      { text: "En analysant exhaustivement toutes les données et en éliminant les biais émotionnels", scores: { TR: 2, BA: 2 } },
+      { text: "En agissant rapidement, en acceptant de corriger le tir si nécessaire", scores: { BR: 2, GA: 2 } }
+    ]
+  },
+  {
+    text: "Quel défaut vos collaborateurs vous reconnaissent-ils le plus fréquemment ?",
+    options: [
+      { text: "L'arrogance ou un perfectionnisme qui peut paralyser les équipes", scores: { VE: 2, TO: 2 } },
+      { text: "L'impulsivité, l'impatience ou une tendance à l'affrontement direct", scores: { BR: 3, GA: 1 } },
+      { text: "Une tendance à la paranoïa, à l'excès de discrétion ou à la rétention d'information", scores: { NO: 3, TR: 1 } },
+      { text: "L'excentricité, l'imprévisibilité ou des raisonnements difficiles à suivre pour les autres", scores: { MA: 3, HE: 1 } }
+    ]
+  },
+  {
+    text: "Dans un groupe de travail à enjeux élevés, quel rôle adoptez-vous naturellement ?",
+    options: [
+      { text: "Le leader stratège qui fixe le cap et délègue avec autorité", scores: { VE: 2, LA: 2 } },
+      { text: "Le créatif disruptif qui apporte des angles inédits et challenge les évidences", scores: { TO: 1, MA: 2, BR: 1 } },
+      { text: "L'analyste discret qui observe, collecte et synthétise avant d'intervenir", scores: { NO: 2, TR: 2 } },
+      { text: "L'architecte de l'ombre qui structure sans se mettre en avant", scores: { LA: 3, HE: 1 } }
+    ]
+  },
+  {
+    text: "Quelle est votre rapport au travail en dehors des horaires conventionnels ?",
+    options: [
+      { text: "Je suis particulièrement efficace et créatif dans les plages nocturnes ou atypiques", scores: { NO: 2, LA: 2, MA: 1 } },
+      { text: "Je préfère des horaires stricts et réguliers, garants d'une organisation optimale", scores: { VE: 2, BA: 2 } },
+      { text: "Je m'adapte sans effort à n'importe quel contexte ou contrainte temporelle", scores: { GA: 3, BR: 1 } },
+      { text: "L'inspiration et la productivité arrivent à n'importe quel moment : je les saisit", scores: { TO: 2, MA: 2 } }
+    ]
+  },
+  {
+    text: "Comment vous situez-vous par rapport à vos origines familiales et à votre héritage ?",
+    options: [
+      { text: "Mon héritage familial et ma lignée sont centraux dans la construction de mon identité professionnelle", scores: { HE: 3, VE: 1 } },
+      { text: "Je me suis construit en rupture avec mes origines, je suis l'artisan de ma propre trajectoire", scores: { BR: 2, GA: 2 } },
+      { text: "Ma famille représente mon cercle de confiance absolu et ma raison de réussir", scores: { HE: 2, LA: 2 } },
+      { text: "Mes origines m'importent peu dans le contexte professionnel : seuls les résultats comptent", scores: { MA: 2, BA: 2 } }
+    ]
+  },
+  {
+    text: "Quelle forme d'influence vous attire le plus dans l'exercice du pouvoir ?",
+    options: [
+      { text: "Le pouvoir institutionnel et légitime, reconnu et consacré par les structures en place", scores: { VE: 3, BA: 1 } },
+      { text: "Le pouvoir de séduction et d'influence culturelle, la capacité à façonner les perceptions", scores: { TO: 2, LA: 2 } },
+      { text: "Le pouvoir de l'information et du renseignement stratégique, savoir ce que les autres ignorent", scores: { NO: 3, TR: 1 } },
+      { text: "Un pouvoir discret et systémique, exercé en coulisse sur les structures et les institutions", scores: { LA: 2, HE: 2 } }
+    ]
+  },
+  {
+    text: "Comment vivez-vous les périodes d'isolement professionnel ou de travail en solitaire ?",
+    options: [
+      { text: "Difficilement : j'ai besoin d'un entourage de qualité pour donner le meilleur", scores: { VE: 2, TO: 2 } },
+      { text: "Je les apprécie profondément pour me ressourcer, observer et réfléchir sans contrainte", scores: { NO: 3, GA: 1 } },
+      { text: "La solitude me connecte à une dimension plus profonde de ma pensée et de mon intuition", scores: { MA: 2, HE: 2 } },
+      { text: "Je les utilise pour approfondir mes expertises et développer mes méthodes de travail", scores: { TR: 3, BA: 1 } }
+    ]
+  },
+  {
+    text: "Comment définiriez-vous votre rapport à la loyauté professionnelle ?",
+    options: [
+      { text: "Loyauté absolue et inconditionnelle à mon organisation et à ses représentants légitimes", scores: { VE: 2, TR: 2 } },
+      { text: "La loyauté doit d'abord s'exercer envers mes valeurs et ma conscience professionnelle", scores: { BR: 3, BA: 1 } },
+      { text: "Loyauté à mon groupe restreint, à ceux qui ont prouvé leur valeur à mes côtés", scores: { LA: 2, HE: 2 } },
+      { text: "La loyauté se mérite et peut évoluer : elle est proportionnelle à la réciprocité", scores: { GA: 2, BA: 2 } }
+    ]
+  },
+  {
+    text: "Quel secteur d'activité vous attirerait le plus si vous deviez vous reconvertir ?",
+    options: [
+      { text: "Finance d'investissement, droit des affaires, direction générale de grandes entreprises", scores: { VE: 3, BA: 1 } },
+      { text: "Arts, mode, culture, luxe, gastronomie ou architecture", scores: { TO: 3, MA: 1 } },
+      { text: "Politique, organisations internationales, plaidoyer, ONG ou activisme structuré", scores: { BR: 2, LA: 2 } },
+      { text: "Renseignement, analyse stratégique, cybersécurité ou investigation spécialisée", scores: { NO: 2, TR: 2 } }
+    ]
+  },
+  {
+    text: "Face à une injustice manifeste dans votre environnement professionnel, quelle est votre réaction ?",
+    options: [
+      { text: "Je cherche à rétablir l'équilibre par les voies institutionnelles et légitimes disponibles", scores: { VE: 2, BA: 2 } },
+      { text: "Je l'affronte directement et avec force, quitte à mettre ma position en danger", scores: { BR: 3, GA: 1 } },
+      { text: "J'accumule des informations et des preuves pour agir au moment stratégique le plus efficace", scores: { NO: 2, LA: 2 } },
+      { text: "J'explore des voies alternatives, parfois non-conventionnelles, pour rétablir l'équilibre", scores: { MA: 2, TR: 2 } }
+    ]
+  },
+  {
+    text: "Quelle est votre relation aux traditions et aux pratiques institutionnelles établies ?",
+    options: [
+      { text: "Les traditions sont des piliers qu'il faut préserver et transmettre aux générations suivantes", scores: { VE: 2, HE: 2 } },
+      { text: "Les traditions freinent l'innovation : elles méritent d'être questionnées systématiquement", scores: { BR: 2, MA: 2 } },
+      { text: "Les traditions contiennent une sagesse accumulée qu'il faut décoder et utiliser", scores: { HE: 2, TR: 2 } },
+      { text: "Je sélectionne ce qui est utile et pertinent, en faisant abstraction du reste", scores: { BA: 2, GA: 2 } }
+    ]
+  },
+  {
+    text: "Comment abordez-vous votre propre développement professionnel et personnel ?",
+    options: [
+      { text: "Par la maîtrise approfondie et progressive de compétences très pointues et spécialisées", scores: { TR: 3, BA: 1 } },
+      { text: "Par des méthodes non-conventionnelles et des approches que la plupart ne comprennent pas", scores: { MA: 3, TO: 1 } },
+      { text: "Par l'expérience terrain directe, en m'adaptant aux situations les plus exigeantes", scores: { GA: 3, BR: 1 } },
+      { text: "Par la connexion à des traditions et des savoirs transmis sur le long terme", scores: { HE: 2, TR: 2 } }
+    ]
+  },
+  {
+    text: "Quelle est votre vision du temps et de la durée dans la construction d'une carrière ?",
+    options: [
+      { text: "Je vis dans l'intensité du moment présent : chaque opportunité compte ici et maintenant", scores: { TO: 2, BR: 2 } },
+      { text: "La mort professionnelle est un passage : ce qui compte, c'est l'héritage qu'on laisse", scores: { HE: 3, VE: 1 } },
+      { text: "Je joue sur le temps long : certains investissements prennent des décennies à porter leurs fruits", scores: { VE: 2, LA: 2 } },
+      { text: "Le temps est une dimension que je perçois différemment : j'anticipe là où les autres réagissent", scores: { MA: 3, TR: 1 } }
+    ]
+  },
+  {
+    text: "Quelle est votre approche des secrets dans le contexte professionnel ?",
+    options: [
+      { text: "Les secrets sont des actifs stratégiques que je protège avec la plus grande rigueur", scores: { NO: 2, TR: 2 } },
+      { text: "Les secrets sont des instruments d'influence à utiliser avec discernement et précision", scores: { LA: 3, NO: 1 } },
+      { text: "Les secrets créent de la méfiance : je préfère une transparence calibrée et contrôlée", scores: { BA: 2, BR: 2 } },
+      { text: "Certains secrets doivent être gardés pour protéger ceux qui nous sont proches", scores: { HE: 3, VE: 1 } }
+    ]
+  },
+  {
+    text: "Dans quelle mesure êtes-vous à l'aise avec l'ambiguïté et l'incertitude ?",
+    options: [
+      { text: "Je préfère la clarté, les cadres bien définis et les mandats précis", scores: { VE: 2, BA: 2 } },
+      { text: "L'ambiguïté m'inspire et me stimule : elle libère ma créativité et mon imagination", scores: { TO: 2, MA: 2 } },
+      { text: "Je l'accepte comme condition inhérente à la complexité : elle cache toujours une structure", scores: { TR: 2, NO: 2 } },
+      { text: "L'ambiguïté est une opportunité stratégique que j'exploite avant les autres", scores: { LA: 3, GA: 1 } }
+    ]
+  },
+  {
+    text: "Comment décririez-vous votre rapport à votre image et à votre apparence professionnelle ?",
+    options: [
+      { text: "L'image est cruciale : elle doit être irréprochable, soignée et en accord avec mon statut", scores: { VE: 2, TO: 2 } },
+      { text: "L'image est un instrument de travail puissant que j'utilise délibérément selon les contextes", scores: { LA: 3, BA: 1 } },
+      { text: "L'apparence ne devrait pas avoir d'importance : seule la compétence compte", scores: { NO: 2, GA: 2 } },
+      { text: "J'entretiens une image délibérément atypique ou décalée qui me distingue et intrigue", scores: { MA: 3, BR: 1 } }
+    ]
+  },
+  {
+    text: "Quelle formulation vous parle le plus dans le contexte de votre développement professionnel ?",
+    options: [
+      { text: "\"La légitimité se construit dans la durée, par la maîtrise et la position institutionnelle\"", scores: { VE: 3, HE: 1 } },
+      { text: "\"Tout ce qui est beau et excellent mérite d'être protégé, cultivé et transmis\"", scores: { TO: 2, HE: 2 } },
+      { text: "\"Aucune chaîne ne doit contraindre ceux qui ont la capacité et la volonté de s'en libérer\"", scores: { BR: 3, GA: 1 } },
+      { text: "\"Celui qui contrôle l'information contrôle le destin de ceux qui l'ignorent\"", scores: { NO: 2, TR: 1, LA: 1 } }
+    ]
+  }
+];
+
+// ─────────────────────────────────────────────
+// DATA: COACHES (one per clan)
+// ─────────────────────────────────────────────
+
+const coaches = {
+  VE: {
+    name: "Maximilien de Courtois",
+    specialty: "Coach Exécutif · Dirigeants & Élites",
+    phone: "+33 (0)6 12 34 56 78",
+    email: "m.decourtois@vagencemetier.fr",
+    quote: "La vraie autorité ne se réclame pas. Elle se reconnaît.",
+    bio: "Ancien directeur associé au sein d'un cabinet de conseil stratégique international, Maximilien de Courtois accompagne depuis vingt ans les dirigeants des plus grandes organisations françaises et européennes. Diplômé de l'ENA et de Sciences Po Paris, il intervient principalement auprès des PDG, directeurs généraux et membres de conseils d'administration. Sa méthode repose sur une approche rigoureuse de la gouvernance et du leadership institutionnel. Il est réputé pour sa capacité à structurer les dynamiques de pouvoir au sein des organisations complexes et à préparer ses clients aux négociations les plus délicates. Son réseau couvre les sphères de la finance, du droit d'affaires et des grandes institutions publiques.",
+    color: "#1a1a3e",
+    initials: "MC"
+  },
+  TO: {
+    name: "Isabelle Fontaine",
+    specialty: "Consultante Image & Leadership Charismatique",
+    phone: "+33 (0)6 23 45 67 89",
+    email: "i.fontaine@vagencemetier.fr",
+    quote: "L'excellence est un art que l'on choisit de pratiquer chaque jour.",
+    bio: "Isabelle Fontaine est une consultante en image et leadership charismatique de renommée internationale. Après une carrière dans l'industrie du luxe et des arts visuels à Paris et Milan, elle a fondé sa propre approche du coaching exécutif, centrée sur l'expression authentique du potentiel créatif en contexte professionnel. Elle accompagne des dirigeants issus des secteurs de la mode, de la culture, du luxe et des médias, ainsi que des personnalités publiques souhaitant affiner leur présence et leur impact. Ses séances combinent techniques de communication non verbale, travail sur l'esthétique de la présentation et développement du charisme naturel.",
+    color: "#2e1a2e",
+    initials: "IF"
+  },
+  BR: {
+    name: "Thomas Kervern",
+    specialty: "Coach Transformation & Conduite du Changement",
+    phone: "+33 (0)6 34 56 78 90",
+    email: "t.kervern@vagencemetier.fr",
+    quote: "Rien ne progresse sans la volonté de bousculer ce qui doit l'être.",
+    bio: "Thomas Kervern est l'un des coachs en transformation organisationnelle les plus sollicités en France. Ancien syndicaliste reconverti dans le conseil en management, il a traversé des conflits sociaux majeurs et des restructurations d'envergure dans des secteurs aussi variés que l'industrie, le transport et les services publics. Sa méthode directe et sans complaisance est reconnue pour sa capacité à générer des prises de conscience profondes et durables. Il intervient notamment auprès de dirigeants souhaitant impulser des changements culturels ambitieux dans des environnements résistants. Son approche valorise l'authenticité, la confrontation constructive et la puissance de l'engagement collectif.",
+    color: "#1e0a0a",
+    initials: "TK"
+  },
+  NO: {
+    name: "Alexandre Mouchard",
+    specialty: "Expert Veille Stratégique & Intelligence Économique",
+    phone: "+33 (0)6 45 67 89 01",
+    email: "a.mouchard@vagencemetier.fr",
+    quote: "Ce que vous ne voyez pas est souvent ce qui vous gouverne.",
+    bio: "Alexandre Mouchard est un expert reconnu en intelligence économique et veille stratégique, après une longue carrière dans les services de renseignement économique français et auprès de grandes multinationales. Discret et méthodique, il accompagne des dirigeants et des organisations dans la collecte, l'analyse et l'exploitation d'informations à haute valeur stratégique. Il forme également ses clients à la contre-espionnage industriel et à la gestion de leur exposition informationnelle. Son travail, qui se déroule toujours dans la plus stricte confidentialité, l'a amené à intervenir dans des secteurs aussi sensibles que la défense, l'énergie et la finance internationale.",
+    color: "#0a1a0a",
+    initials: "AM"
+  },
+  TR: {
+    name: "Véronique Astier",
+    specialty: "Spécialiste Innovation & Méthodologies Complexes",
+    phone: "+33 (0)6 56 78 90 12",
+    email: "v.astier@vagencemetier.fr",
+    quote: "La maîtrise est le seul chemin qui mène à la véritable liberté.",
+    bio: "Véronique Astier a consacré sa carrière au développement de méthodologies innovantes appliquées au leadership et à la transformation des organisations. Docteure en sciences cognitives et certifiée dans une douzaine d'approches de coaching et de développement organisationnel, elle est reconnue pour sa capacité à concevoir des dispositifs sur mesure intégrant les dernières avancées en neurosciences, psychologie systémique et intelligence collective. Elle travaille principalement avec des profils à haute capacité intellectuelle, des chercheurs, des experts et des dirigeants dans les secteurs de la technologie, de la santé et de l'ingénierie de pointe. Son approche rigoureuse et structurée lui vaut une réputation d'excellence dans les milieux les plus exigeants.",
+    color: "#0a0a1e",
+    initials: "VA"
+  },
+  GA: {
+    name: "Baptiste Renard",
+    specialty: "Coach Résilience & Leadership Terrain",
+    phone: "+33 (0)6 67 89 01 23",
+    email: "b.renard@vagencemetier.fr",
+    quote: "On apprend plus sur soi en une nuit en pleine nature qu'en dix ans de bureau.",
+    bio: "Baptiste Renard est un coach spécialisé dans le leadership en conditions extrêmes et la résilience professionnelle. Ancien guide de haute montagne et instructeur dans des programmes de formation militaire au leadership, il a reconverti son expérience du terrain dans un cabinet de coaching qui lui est propre depuis quinze ans. Ses programmes, souvent conduits en extérieur ou dans des environnements inhabituels, sont conçus pour révéler le potentiel de leadership dans des situations de pression maximale. Il travaille régulièrement avec des managers de terrain, des équipes de gestion de crise et des dirigeants souhaitant renforcer leur robustesse psychologique et leur capacité d'adaptation.",
+    color: "#0a140a",
+    initials: "BR"
+  },
+  MA: {
+    name: "Camille Vernet",
+    specialty: "Consultant Créativité Disruptive & Innovation",
+    phone: "+33 (0)6 78 90 12 34",
+    email: "c.vernet@vagencemetier.fr",
+    quote: "Les vérités les plus importantes arrivent rarement là où on les cherche.",
+    bio: "Camille Vernet est une figure atypique du conseil en innovation. Après un parcours chaotique et brillant entre la philosophie, la neuroscience et le design thinking, il a développé une approche du coaching radicalement différente des standards du marché. Ses interventions, souvent déconcertantes au premier abord, débouchent invariablement sur des insights d'une profondeur remarquable. Il est particulièrement recherché par les organisations souhaitant sortir de leurs angles morts stratégiques, remettre en question leurs certitudes fondamentales et explorer des territoires de développement inattendus. Ses clients le décrivent unanimement comme imprévisible, parfois déstabilisant, mais toujours transformateur.",
+    color: "#1a0a1a",
+    initials: "CV"
+  },
+  BA: {
+    name: "Rania Belhaj",
+    specialty: "Expert Conformité, Arbitrage & Éthique des Affaires",
+    phone: "+33 (0)6 89 01 23 45",
+    email: "r.belhaj@vagencemetier.fr",
+    quote: "La précision est la seule forme d'honnêteté qui vaille dans les affaires complexes.",
+    bio: "Rania Belhaj est une experte internationalement reconnue en conformité, arbitrage commercial et éthique des affaires. Avocate de formation spécialisée en droit international, elle a exercé pendant dix ans dans des cabinets anglo-saxons de premier plan avant de se consacrer au coaching exécutif pour les dirigeants naviguant dans des environnements réglementaires complexes. Sa rigueur analytique, sa connaissance approfondie des cadres légaux et sa capacité à prendre des décisions dans des zones grises en font une conseillère précieuse pour les organisations opérant à l'international. Elle est également reconnue pour son intégrité sans faille et sa capacité à fixer des limites claires là où d'autres hésitent.",
+    color: "#14100a",
+    initials: "RB"
+  },
+  LA: {
+    name: "Édouard de Noirmont",
+    specialty: "Conseiller Influence, Gouvernance & Stratégies d'Ombre",
+    phone: "+33 (0)6 90 12 34 56",
+    email: "e.denoirmont@vagencemetier.fr",
+    quote: "Le pouvoir véritable ne cherche pas la lumière. Il la crée.",
+    bio: "Édouard de Noirmont est l'un des conseillers les plus discrets et les plus influents du paysage français. Sa biographie officielle est délibérément lacunaire, mais son réseau couvre les sphères les plus élevées de la politique, de la finance et des médias. Consultant en gouvernance et stratégies d'influence depuis plus de vingt ans, il accompagne des dirigeants souhaitant renforcer leur positionnement institutionnel, construire des alliances durables et exercer une influence systémique sur leur environnement. Son approche, profondément pragmatique, n'exclut aucune dimension du pouvoir réel. Il est recommandé exclusivement par le bouche-à-oreille, dans les cercles les plus fermés.",
+    color: "#0a0a0a",
+    initials: "EN"
+  },
+  HE: {
+    name: "Sophie Delacombe",
+    specialty: "Consultante Transmission Patrimoniale & Héritage Professionnel",
+    phone: "+33 (0)6 01 23 45 67",
+    email: "s.delacombe@vagencemetier.fr",
+    quote: "Ce que nous laissons derrière nous définit infiniment plus que ce que nous avons pris.",
+    bio: "Sophie Delacombe est une consultante spécialisée dans les problématiques de transmission d'entreprise, de continuité dynastique et d'héritage professionnel au sens large. Après une carrière dans le notariat et la banque privée, elle a développé une approche de coaching qui accompagne les dirigeants dans la construction d'un héritage professionnel et humain durable. Elle travaille notamment avec des fondateurs d'entreprise souhaitant préparer leur succession, des héritiers devant assumer un leadership familial complexe, et des dirigeants confrontés à la question de leur propre postérité. Son travail intègre des dimensions juridiques, psychologiques et philosophiques rarement réunies dans un seul accompagnement.",
+    color: "#1a1a0a",
+    initials: "SD"
+  }
+};
+
+// ─────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────
+
+let currentQuestion = 0;
+let answers = new Array(questions.length).fill(null);
+let scores = {};
+let answerLog = []; // for admin mode
+
+// Init scores
+Object.keys(CLANS).forEach(c => scores[c] = 0);
+
+// ─────────────────────────────────────────────
+// NAVIGATION
+// ─────────────────────────────────────────────
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+    s.style.display = 'none';
+  });
+  const target = document.getElementById('screen-' + id);
+  target.style.display = 'block';
+  target.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function startQuiz() {
+  currentQuestion = 0;
+  answers = new Array(questions.length).fill(null);
+  Object.keys(CLANS).forEach(c => scores[c] = 0);
+  answerLog = [];
+  showScreen('quiz');
+  renderQuestion();
+}
+
+function restartQuiz() {
+  startQuiz();
+}
+
+// ─────────────────────────────────────────────
+// QUIZ RENDERING
+// ─────────────────────────────────────────────
+
+function renderQuestion() {
+  const q = questions[currentQuestion];
+  const total = questions.length;
+  const pct = Math.round((currentQuestion / total) * 100);
+
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Question ${currentQuestion + 1} / ${total}`;
+  document.getElementById('quizCounter').textContent = `${currentQuestion + 1} / ${total}`;
+
+  const letters = ['A', 'B', 'C', 'D'];
+  const selectedIdx = answers[currentQuestion];
+
+  const html = `
+    <div class="question-card">
+      <div class="question-num">Question ${currentQuestion + 1} sur ${total}</div>
+      <div class="question-text serif">${q.text}</div>
+      <div class="options-list">
+        ${q.options.map((opt, i) => `
+          <button class="option-btn ${selectedIdx === i ? 'selected' : ''}"
+                  onclick="selectAnswer(${i})">
+            <span><span class="option-letter">${letters[i]}.</span> ${opt.text}</span>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('questionContainer').innerHTML = html;
+
+  const btnPrev = document.getElementById('btnPrev');
+  const btnNext = document.getElementById('btnNext');
+
+  btnPrev.disabled = currentQuestion === 0;
+
+  if (currentQuestion === total - 1) {
+    btnNext.textContent = 'Terminer l\'évaluation →';
+    btnNext.disabled = selectedIdx === null;
+  } else {
+    btnNext.textContent = 'Suivant →';
+    btnNext.disabled = selectedIdx === null;
+  }
+}
+
+function selectAnswer(idx) {
+  answers[currentQuestion] = idx;
+  renderQuestion();
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) {
+    currentQuestion--;
+    renderQuestion();
+    window.scrollTo(0, 0);
+  }
+}
+
+function nextQuestion() {
+  if (answers[currentQuestion] === null) return;
+
+  const q = questions[currentQuestion];
+  const opt = q.options[answers[currentQuestion]];
+
+  // Log for admin
+  answerLog.push({
+    qNum: currentQuestion + 1,
+    qText: q.text,
+    chosen: opt.text,
+    scores: { ...opt.scores }
+  });
+
+  // Add scores
+  Object.entries(opt.scores).forEach(([clan, pts]) => {
+    scores[clan] = (scores[clan] || 0) + pts;
+  });
+
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    renderQuestion();
+    window.scrollTo(0, 0);
+  } else {
+    // End of quiz
+    showLoading();
+  }
+}
+
+// ─────────────────────────────────────────────
+// LOADING ANIMATION
+// ─────────────────────────────────────────────
+
+function showLoading() {
+  showScreen('loading');
+
+  const steps = ['lstep1', 'lstep2', 'lstep3', 'lstep4'];
+  steps.forEach(id => {
+    const el = document.getElementById(id);
+    el.classList.remove('done', 'active');
+  });
+
+  document.getElementById('lstep1').classList.add('active');
+
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i > 0) {
+      document.getElementById(steps[i - 1]).classList.remove('active');
+      document.getElementById(steps[i - 1]).classList.add('done');
+    }
+    if (i < steps.length) {
+      document.getElementById(steps[i]).classList.add('active');
+      i++;
+    } else {
+      clearInterval(interval);
+      setTimeout(showResult, 600);
+    }
+  }, 900);
+}
+
+// ─────────────────────────────────────────────
+// RESULT
+// ─────────────────────────────────────────────
+
+function showResult() {
+  // Find dominant clan
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const topClan = sorted[0][0];
+  const topScore = sorted[0][1];
+  const maxPossible = questions.length * 3; // rough max
+  const matchPct = Math.min(97, Math.round(72 + (topScore / maxPossible) * 25));
+
+  const coach = coaches[topClan];
+
+  // Set coach data
+  document.getElementById('coachSpecialty').textContent = coach.specialty;
+  document.getElementById('coachName').textContent = coach.name;
+  document.getElementById('coachQuote').textContent = `« ${coach.quote} »`;
+  document.getElementById('coachPhone').textContent = coach.phone;
+  document.getElementById('coachEmail').textContent = coach.email;
+  document.getElementById('coachBio').textContent = coach.bio;
+  document.getElementById('matchPct').textContent = matchPct + '% de compatibilité';
+
+  // Animate match bar
+  setTimeout(() => {
+    document.getElementById('matchBarFill').style.width = matchPct + '%';
+  }, 800);
+
+  // Coach photo (SVG avatar)
+  document.getElementById('coachPhotoWrap').innerHTML = generateAvatar(coach.initials, coach.color);
+
+  // Admin mode
+  const isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
+  if (isAdmin) {
+    showAdminPanel(topClan, sorted);
+  }
+
+  showScreen('result');
+}
+
+function generateAvatar(initials, bgColor) {
+  return `
+    <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+      <defs>
+        <radialGradient id="avatarGrad" cx="50%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="${lighten(bgColor, 40)}"/>
+          <stop offset="100%" stop-color="${bgColor}"/>
+        </radialGradient>
+        <clipPath id="avatarClip">
+          <rect width="200" height="240"/>
+        </clipPath>
+      </defs>
+      <rect width="200" height="240" fill="url(#avatarGrad)"/>
+      <!-- Subtle pattern -->
+      <rect width="200" height="240" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="40"/>
+      <!-- Silhouette body -->
+      <ellipse cx="100" cy="200" rx="70" ry="45" fill="rgba(0,0,0,0.4)"/>
+      <!-- Silhouette head -->
+      <circle cx="100" cy="105" r="40" fill="rgba(0,0,0,0.35)"/>
+      <!-- Shoulders -->
+      <path d="M30 200 Q60 150 100 145 Q140 150 170 200 Z" fill="rgba(0,0,0,0.35)"/>
+      <!-- Initials -->
+      <text x="100" y="116" font-family="Georgia, serif" font-size="22" font-weight="500"
+            text-anchor="middle" fill="rgba(244,240,235,0.55)" letter-spacing="3">${initials}</text>
+      <!-- Decorative line -->
+      <line x1="40" y1="225" x2="160" y2="225" stroke="rgba(184,150,90,0.2)" stroke-width="1"/>
+    </svg>
+  `;
+}
+
+function lighten(hex, amount) {
+  const num = parseInt(hex.slice(1), 16);
+  const r = Math.min(255, (num >> 16) + amount);
+  const g = Math.min(255, ((num >> 8) & 0xff) + amount);
+  const b = Math.min(255, (num & 0xff) + amount);
+  return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
+}
+
+// ─────────────────────────────────────────────
+// ADMIN MODE
+// ─────────────────────────────────────────────
+
+function showAdminPanel(topClan, sorted) {
+  const panel = document.getElementById('adminPanel');
+  panel.classList.remove('hidden');
+
+  const maxScore = sorted[0][1] || 1;
+
+  document.getElementById('adminClanName').innerHTML =
+    `🩸 Clan identifié : <strong>${CLANS[topClan]}</strong>`;
+
+  // Scores
+  const scoresHtml = sorted.map(([clan, score]) => `
+    <div class="admin-score-row">
+      <span class="admin-score-name">${CLANS[clan]}</span>
+      <div class="admin-score-bar-wrap">
+        <div class="admin-score-bar ${clan === topClan ? 'top' : ''}"
+             style="width:${Math.round((score / maxScore) * 100)}%"></div>
+      </div>
+      <span class="admin-score-num">${score}</span>
+    </div>
+  `).join('');
+  document.getElementById('adminScores').innerHTML = scoresHtml;
+
+  // Mapping
+  const mappingHtml = answerLog.map(entry => {
+    const clanPts = Object.entries(entry.scores)
+      .map(([c, p]) => `${CLANS[c]}(+${p})`)
+      .join(', ');
+    return `Q${entry.qNum}: <em>${entry.chosen.substring(0, 60)}...</em><br>→ ${clanPts}`;
+  }).join('<br><br>');
+  document.getElementById('adminMapping').innerHTML = mappingHtml;
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+
+// Show home by default
+document.addEventListener('DOMContentLoaded', () => {
+  showScreen('home');
+
+  // Check if ?start=true
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('start') === 'true') {
+    startQuiz();
+  }
+});
+</script>
+</body>
+</html>
