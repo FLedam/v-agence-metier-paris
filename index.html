@@ -1033,6 +1033,18 @@ footer {
 
 /* ─── UTILS ─── */
 .hidden { display: none !important; }
+
+/* ─── LOGOS PNG (override) ─── */
+.nav-logo img,
+.loading-logo img,
+.footer-logo img {
+  background: transparent;
+  display: block;
+}
+.nav-logo img { width: 38px; height: 38px; object-fit: contain; }
+.loading-logo img { width: 60px; height: 60px; object-fit: contain; }
+.footer-logo img { width: 32px; height: 32px; object-fit: contain; }
+
 </style>
 </head>
 <body>
@@ -1040,26 +1052,7 @@ footer {
 <!-- ─── NAVIGATION ─── -->
 <nav>
   <a href="#" class="nav-logo" onclick="showScreen('home'); return false;">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Eiffel Tower silhouette (subtle, background) -->
-      <path d="M50 10 L44 30 L38 30 L36 35 L43 35 L39 58 L35 58 L33 65 L42 65 L40 82 L36 82 L35 88 L65 88 L64 82 L60 82 L58 65 L67 65 L66 58 L62 58 L57 35 L64 35 L62 30 L56 30 Z"
-            fill="rgba(107,26,26,0.25)" stroke="rgba(184,150,90,0.15)" stroke-width="0.5"/>
-      <!-- V hand sign - index and middle fingers -->
-      <!-- Palm base -->
-      <ellipse cx="50" cy="78" rx="16" ry="10" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8"/>
-      <!-- Ring finger (bent) -->
-      <rect x="52" y="52" width="9" height="26" rx="4.5" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8" transform="rotate(3, 56, 65)"/>
-      <!-- Pinky (bent) -->
-      <rect x="61" y="58" width="7" height="20" rx="3.5" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8" transform="rotate(8, 65, 68)"/>
-      <!-- Thumb (bent) -->
-      <rect x="28" y="58" width="7" height="16" rx="3.5" fill="#1c1c1c" stroke="rgba(184,150,90,0.3)" stroke-width="0.8" transform="rotate(-15, 31, 66)"/>
-      <!-- Middle finger (extended - left of V) -->
-      <rect x="36" y="18" width="10" height="46" rx="5" fill="var(--blanc-casse)" stroke="rgba(184,150,90,0.4)" stroke-width="0.8" transform="rotate(-8, 41, 41)"/>
-      <!-- Index finger (extended - right of V) -->
-      <rect x="50" y="20" width="10" height="44" rx="5" fill="var(--blanc-casse)" stroke="rgba(184,150,90,0.4)" stroke-width="0.8" transform="rotate(8, 55, 42)"/>
-      <!-- Gold accent dot -->
-      <circle cx="50" cy="95" r="2" fill="var(--or)" opacity="0.6"/>
-    </svg>
+    <img src="logo.png" alt="V Agence Métier Paris" style="width:38px;height:38px;object-fit:contain;background:transparent;display:block;">
     <div class="nav-brand">
       <span class="nav-brand-main">V Agence Métier</span>
       <span class="nav-brand-sub">Paris · Executive Search</span>
@@ -1150,11 +1143,7 @@ footer {
 
     <footer>
       <div class="footer-logo">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 10 L44 30 L38 30 L36 35 L43 35 L39 58 L35 58 L33 65 L42 65 L40 82 L36 82 L35 88 L65 88 L64 82 L60 82 L58 65 L67 65 L66 58 L62 58 L57 35 L64 35 L62 30 L56 30 Z" fill="rgba(107,26,26,0.3)"/>
-          <rect x="36" y="18" width="10" height="46" rx="5" fill="var(--blanc-casse)" opacity="0.7" transform="rotate(-8, 41, 41)"/>
-          <rect x="50" y="20" width="10" height="44" rx="5" fill="var(--blanc-casse)" opacity="0.7" transform="rotate(8, 55, 42)"/>
-        </svg>
+        <img src="logo.png" alt="V Agence Métier Paris" style="width:32px;height:32px;object-fit:contain;background:transparent;display:block;margin:0 auto;">
       </div>
       <div class="footer-name serif">V Agence Métier Paris</div>
       <div class="footer-tagline">Recrutement Executive · Conseil en Carrière · Accompagnement Dirigeants</div>
@@ -1203,11 +1192,7 @@ footer {
 <!-- ─── SCREEN: LOADING ─── -->
 <div id="screen-loading" class="screen">
   <div class="loading-logo">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 10 L44 30 L38 30 L36 35 L43 35 L39 58 L35 58 L33 65 L42 65 L40 82 L36 82 L35 88 L65 88 L64 82 L60 82 L58 65 L67 65 L66 58 L62 58 L57 35 L64 35 L62 30 L56 30 Z" fill="rgba(107,26,26,0.3)"/>
-      <rect x="36" y="18" width="10" height="46" rx="5" fill="var(--blanc-casse)" opacity="0.8" transform="rotate(-8, 41, 41)"/>
-      <rect x="50" y="20" width="10" height="44" rx="5" fill="var(--blanc-casse)" opacity="0.8" transform="rotate(8, 55, 42)"/>
-    </svg>
+    <img src="logo.png" alt="V Agence Métier Paris" style="width:60px;height:60px;object-fit:contain;background:transparent;display:block;">
   </div>
   <div class="loading-text serif">Analyse de votre profil</div>
   <div class="loading-sub">Traitement en cours</div>
