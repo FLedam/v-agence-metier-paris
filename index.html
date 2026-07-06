@@ -7,16 +7,10 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --noir: #080808;
-  --anthracite: #1c1c1c;
-  --gris: #2e2e2e;
-  --gris-clair: #5a5a5a;
-  --blanc-casse: #f4f0eb;
-  --creme: #e8e2d9;
-  --bordeaux: #6b1a1a;
-  --bordeaux-clair: #8b2222;
-  --or: #b8965a;
-  --or-clair: #d4aa6e;
+  --noir: #080808; --anthracite: #1c1c1c; --gris: #2e2e2e; --gris-clair: #5a5a5a;
+  --blanc-casse: #f4f0eb; --creme: #e8e2d9;
+  --bordeaux: #6b1a1a; --bordeaux-clair: #8b2222;
+  --or: #b8965a; --or-clair: #d4aa6e;
 }
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 html { scroll-behavior: smooth; }
@@ -94,14 +88,12 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 
 .btn-secondary:hover { border-color: rgba(255,255,255,0.3); color: var(--blanc-casse); }
 .btn-secondary:disabled { opacity: 0.25; cursor: not-allowed; }
 .quiz-counter { font-size: 0.65rem; color: var(--gris-clair); letter-spacing: 0.1em; }
-/* Tiebreaker question — slightly different visual treatment */
 .tiebreak-card { border-color: rgba(184,150,90,0.3) !important; background: linear-gradient(180deg, var(--anthracite) 0%, #20180f 100%); }
 .tiebreak-card .question-num { color: var(--or); }
 .tiebreak-card .question-text { font-style: italic; }
 .option-motto { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; font-style: italic; color: var(--blanc-casse); line-height: 1.4; }
 .option-motto::before { content: '« '; color: var(--or); }
 .option-motto::after { content: ' »'; color: var(--or); }
-/* Loading */
 #screen-loading { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--noir); text-align: center; }
 .loading-logo { margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .loading-logo-img { width: 240px; height: 240px; max-width: 55vw; max-height: 55vw; object-fit: contain; background: transparent; display: block; opacity: 0; transform: scale(0.85); animation: logoReveal 1s ease-out forwards, logoPulse 2.4s ease-in-out 1s infinite; filter: drop-shadow(0 0 30px rgba(184,150,90,0.18)); }
@@ -125,7 +117,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 
 .step-check { width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; flex-shrink: 0; }
 .loading-step.done .step-check::after { content: '✓'; }
 .loading-step.active .step-check::after { content: '◆'; font-size: 0.4rem; }
-/* Result */
 #screen-result { background: var(--noir); padding: 0; min-height: 100vh; }
 .result-hero { background: var(--anthracite); padding: 5rem 2rem 4rem; text-align: center; border-bottom: 1px solid rgba(184,150,90,0.1); position: relative; overflow: hidden; }
 .result-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(107,26,26,0.2) 0%, transparent 70%); pointer-events: none; }
@@ -185,7 +176,6 @@ footer { background: var(--anthracite); border-top: 1px solid rgba(184,150,90,0.
 ::-webkit-scrollbar-track { background: var(--noir); }
 ::-webkit-scrollbar-thumb { background: var(--bordeaux); }
 .hidden { display: none !important; }
-/* Splash */
 body.splash-active { overflow: hidden; }
 #splash-screen { position: fixed; inset: 0; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.7s ease, visibility 0.7s ease; opacity: 1; visibility: visible; }
 #splash-screen.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -205,7 +195,7 @@ body.splash-active { overflow: hidden; }
 <!-- ─── SPLASH SCREEN ─── -->
 <div id="splash-screen">
   <div class="splash-inner">
-    <img src="logo.png" alt="V Agence Métier" class="splash-logo">
+    logo.png
     <div class="splash-bar"><div class="splash-bar-fill"></div></div>
     <div class="splash-tagline">V Agence Métier · Paris</div>
   </div>
@@ -217,18 +207,18 @@ body.splash-active { overflow: hidden; }
 </script>
 <!-- ─── NAVIGATION ─── -->
 <nav>
-  <a href="#" class="nav-logo" onclick="showScreen('home'); return false;">
-    <img src="logo.png" alt="V Agence Métier" class="splash-logo">
+  #
+    logo.png
     <div class="nav-brand">
       <span class="nav-brand-main">V Agence Métier</span>
       <span class="nav-brand-sub">Paris · Executive Search</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#">Notre approche</a></li>
-    <li><a href="#">Expertises</a></li>
-    <li><a href="#">Réseau</a></li>
-    <li><a href="#" onclick="startQuiz(); return false;">Évaluation</a></li>
+    <li>#</li>
+    <li>#</li>
+    <li>#</li>
+    <li>#</li>
   </ul>
 </nav>
 <!-- ─── SCREEN: HOME ─── -->
@@ -255,7 +245,7 @@ body.splash-active { overflow: hidden; }
         <div class="about-label">Notre approche</div>
         <h2 class="about-title serif">Une évaluation comportementale d'exception</h2>
         <p class="about-text">V Agence Métier Paris a développé une méthode propriétaire d'analyse comportementale permettant d'identifier avec précision le coach exécutif le mieux adapté à votre profil de leadership.</p>
-        <p class="about-text">Notre questionnaire, conçu en collaboration avec des psychologues organisationnels et des experts en développement du potentiel humain, révèle des dimensions de votre personnalité que les entretiens classiques ne permettent pas d'atteindre.</p>
+        <p class="about-text">Notre questionnaire, court et ciblé, révèle des dimensions de votre personnalité que les entretiens classiques ne permettent pas d'atteindre. Comptez moins de cinq minutes.</p>
         <div style="margin-top:2rem;"><button class="btn-primary" onclick="startQuiz()"><span>Accéder à l'évaluation →</span></button></div>
       </div>
       <div class="about-stats">
@@ -267,14 +257,10 @@ body.splash-active { overflow: hidden; }
     </div>
   </section>
   <footer>
-<div class="footer-logo">
-      <img src="logo.png" alt="V Agence Métier">
-    </div>
+    <div class="footer-logo">logo.png</div>
     <div class="footer-name serif">V Agence Métier Paris</div>
     <div class="footer-tagline">Recrutement Executive · Conseil en Carrière · Accompagnement Dirigeants</div>
-    <div class="footer-links">
-      <a href="#">Mentions légales</a><a href="#">Politique de confidentialité</a><a href="#">Nous contacter</a><a href="#">Espace candidat</a><a href="#">Espace entreprise</a>
-    </div>
+    <div class="footer-links">#Mentions légales</a>####Espace entreprise</a></div>
     <div class="footer-legal">V Agence Métier Paris SAS · 47 avenue George V, 75008 Paris<br>Tél. +33 (0)1 42 56 78 90 · contact@vagencemetier.fr<br>© 2026 V Agence Métier Paris. Tous droits réservés.</div>
   </footer>
 </div>
@@ -284,23 +270,21 @@ body.splash-active { overflow: hidden; }
     <div class="quiz-header">
       <div class="quiz-label">Évaluation comportementale confidentielle</div>
       <h2 class="quiz-title serif">Évaluation de votre profil de leadership</h2>
-      <p class="quiz-subtitle">Ce questionnaire permet à nos consultants d'identifier le profil de coach le plus adapté à votre personnalité et à vos ambitions professionnelles. Répondez spontanément.</p>
+      <p class="quiz-subtitle">Dix questions, moins de cinq minutes. Répondez spontanément — il n'y a pas de bonne ou de mauvaise réponse.</p>
     </div>
     <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
-    <div class="progress-label" id="progressLabel">Question 1 / 20</div>
+    <div class="progress-label" id="progressLabel">Question 1 / 10</div>
     <div id="questionContainer"></div>
     <div class="quiz-nav">
       <button class="btn-secondary" id="btnPrev" onclick="prevQuestion()" disabled>← Précédent</button>
-      <span class="quiz-counter" id="quizCounter">1 / 20</span>
+      <span class="quiz-counter" id="quizCounter">1 / 10</span>
       <button class="btn-secondary" id="btnNext" onclick="nextQuestion()" disabled>Suivant →</button>
     </div>
   </div>
 </div>
 <!-- ─── SCREEN: LOADING ─── -->
 <div id="screen-loading" class="screen">
-  <div class="loading-logo">
-    <img src="logo.png" alt="V Agence Métier" class="loading-logo-img">
-  </div>
+  <div class="loading-logo">logo.png</div>
   <div class="loading-bar-wrap"><div class="loading-bar-fill"></div></div>
   <div class="loading-text serif">Analyse de votre profil</div>
   <div class="loading-sub">Traitement en cours</div>
@@ -372,13 +356,11 @@ body.splash-active { overflow: hidden; }
   </footer>
 </div>
 <script>
-// ─────────────────────────────────────────────
-// CLANS & MOTTOS (utilisés pour le tiebreak)
-// ─────────────────────────────────────────────
+// ─── CLANS & MOTTOS (tiebreak) ───
 const CLANS = { VE:'Ventrue', TO:'Toreador', BR:'Brujah', NO:'Nosferatu', TR:'Tremere', GA:'Gangrel', MA:'Malkavian', BA:'Banu Haqim', LA:'Lasombra', HE:'Hecata' };
 const MOTTOS = {
   VE: "La noblesse engage. La fonction oblige.",
-  TO: "La beauté est la seule preuve qui compte.",
+  TO: "L'excellence est un art qui se cultive chaque jour.",
   BR: "Aucun silence ne mérite mon assentiment.",
   NO: "Voir, c'est déjà choisir.",
   TR: "Le savoir précis vaut mille certitudes.",
@@ -388,135 +370,70 @@ const MOTTOS = {
   LA: "Le pouvoir véritable se passe d'éclairage.",
   HE: "Ce que l'on transmet survit à ce que l'on possède."
 };
-// ─────────────────────────────────────────────
-// QUESTIONS — 20 questions, scoring parfaitement équilibré
-// Chaque clan : 8 primary (+3) + 8 secondary (+2) → max = 40
-// ─────────────────────────────────────────────
+// ─── QUESTIONS — 10 questions, équilibrage parfait (chaque clan = 20 pts max) ───
 const questions = [
-  { text: "Quelle phrase décrit le mieux votre style de carrière idéal ?", options: [
-    { text: "Évoluer librement, en suivant mes intuitions et mes envies esthétiques du moment", scores: { GA: 3, TO: 2 } },
-    { text: "Tenir une ligne éthique inflexible tout en sachant naviguer les jeux de pouvoir", scores: { BA: 3, LA: 2 } },
-    { text: "Trouver des angles que personne n'avait vus, par des chemins méthodiques mais inattendus", scores: { MA: 3, TR: 2 } },
-    { text: "Bâtir un héritage long terme en cultivant des relations discrètes et durables", scores: { HE: 3, NO: 2 } }
+  { text: "Dans quel environnement de travail donnez-vous le meilleur de vous-même ?", options: [
+    { text: "Un cadre où l'on peut faire bouger les lignes, tout en respectant la culture et l'histoire de la maison", scores: { BR: 3, HE: 2 } },
+    { text: "Une organisation structurée, avec une hiérarchie claire et des règles nettes", scores: { VE: 3, BA: 2 } },
+    { text: "Un poste avec une forte autonomie, où j'exerce mon influence à ma manière", scores: { GA: 3, LA: 2 } },
+    { text: "Un environnement discret, qui valorise le travail bien fait, loin des projecteurs", scores: { NO: 3, TO: 2 } }
   ]},
-  { text: "Comment exercez-vous votre influence dans une organisation ?", options: [
-    { text: "En coulisse, avec une grande latitude d'action et peu de comptes à rendre", scores: { LA: 3, GA: 2 } },
-    { text: "Par mon image, mon charisme, et un sens aigu de ce qui est juste", scores: { TO: 3, BA: 2 } },
-    { text: "Par mon expertise reconnue et l'autorité que confère le temps long", scores: { TR: 3, HE: 2 } },
-    { text: "Par une légitimité institutionnelle assumée et la volonté de bouger les lignes", scores: { VE: 3, BR: 2 } }
+  { text: "Comment décririez-vous votre style de management ?", options: [
+    { text: "J'entraîne par l'exemple et je porte une vision forte à laquelle mes équipes adhèrent", scores: { TO: 3, BR: 2 } },
+    { text: "Je transmets, je m'appuie sur l'expérience, tout en gardant une hiérarchie claire", scores: { HE: 3, VE: 2 } },
+    { text: "Je pilote sans me mettre en avant, en m'appuyant sur les données et sur ma lecture des équipes", scores: { LA: 3, TR: 2 } },
+    { text: "Je pose un cadre clair, tout en gardant une lecture personnelle des situations", scores: { BA: 3, MA: 2 } }
   ]},
-  { text: "Quelle est votre relation à l'information stratégique ?", options: [
-    { text: "Je collecte ce que les autres ne voient pas, et j'y perçois parfois des patterns inattendus", scores: { NO: 3, MA: 2 } },
-    { text: "Je m'en sers pour bousculer le statu quo, sans me laisser enfermer par les conventions", scores: { BR: 3, GA: 2 } },
-    { text: "Je l'analyse avec rigueur et l'utilise pour conforter des décisions stratégiques de haut niveau", scores: { TR: 3, VE: 2 } },
-    { text: "Elle nourrit ma sensibilité culturelle et ma vision long terme", scores: { TO: 3, HE: 2 } }
+  { text: "Quelle est votre plus grande force professionnelle ?", options: [
+    { text: "Ma capacité à voir des angles que les autres n'avaient pas envisagés", scores: { MA: 3, NO: 2 } },
+    { text: "Mon expertise pointue et le soin que j'apporte à chaque livrable", scores: { TR: 3, TO: 2 } },
+    { text: "Mon aptitude à faire avancer les sujets en coulisses, tout en portant des positions fortes quand il le faut", scores: { LA: 3, BR: 2 } },
+    { text: "Ma fiabilité, ma mémoire des dossiers et une éthique qui ne fléchit pas", scores: { HE: 3, BA: 2 } }
   ]},
-  { text: "Quel cadre de travail révèle le mieux votre potentiel ?", options: [
-    { text: "Le terrain, où je peux agir directement et secouer ce qui doit l'être", scores: { GA: 3, BR: 2 } },
-    { text: "Un environnement non-conventionnel où je peux tirer mes propres ficelles", scores: { MA: 3, LA: 2 } },
-    { text: "Un cadre rigoureux, des règles claires, une hiérarchie respectée", scores: { BA: 3, VE: 2 } },
-    { text: "Un poste discret mais proche de la création et de l'excellence", scores: { NO: 3, TO: 2 } }
+  { text: "Face à un conflit dans votre équipe, votre premier réflexe ?", options: [
+    { text: "Rétablir un cadre clair, en m'appuyant sur ce qui avait été convenu au départ", scores: { BA: 3, HE: 2 } },
+    { text: "Mettre les sujets sur la table, quitte à être direct, après avoir observé la situation", scores: { BR: 3, NO: 2 } },
+    { text: "Analyser les causes racines et orienter la résolution sans imposer ma solution", scores: { TR: 3, LA: 2 } },
+    { text: "Trancher rapidement avec l'autorité qui me revient, puis laisser mes équipes agir", scores: { VE: 3, GA: 2 } }
   ]},
-  { text: "Qu'est-ce qui distingue vraiment un dirigeant exceptionnel ?", options: [
-    { text: "Sa capacité à exercer une influence systémique sans jamais se mettre en avant", scores: { LA: 3, NO: 2 } },
-    { text: "Une autorité naturelle, fondée sur une expertise et une trajectoire impeccables", scores: { VE: 3, TR: 2 } },
-    { text: "Son courage à dire les choses et à défendre ce qui est juste, même seul", scores: { BR: 3, BA: 2 } },
-    { text: "Sa capacité à transmettre un héritage tout en restant authentiquement libre", scores: { HE: 3, GA: 2 } }
+  { text: "Qu'est-ce qui vous motive le plus dans votre carrière ?", options: [
+    { text: "L'accès à l'information stratégique et l'influence discrète que cela procure", scores: { NO: 3, LA: 2 } },
+    { text: "Construire un parcours qui me ressemble, avec du style et une vraie indépendance", scores: { TO: 3, GA: 2 } },
+    { text: "Résoudre des problèmes complexes, si possible dans des positions à forte responsabilité", scores: { MA: 3, VE: 2 } },
+    { text: "Défendre des convictions solides et faire vraiment progresser les choses", scores: { BR: 3, TR: 2 } }
   ]},
-  { text: "Face à une décision particulièrement difficile, votre première impulsion ?", options: [
-    { text: "Trancher rapidement selon mes principes, même si c'est inconfortable pour les autres", scores: { BR: 3, BA: 2 } },
-    { text: "M'imprégner du contexte, écouter, observer avant tout jugement", scores: { TO: 3, NO: 2 } },
-    { text: "M'appuyer sur l'expérience accumulée et une analyse approfondie du passé", scores: { HE: 3, TR: 2 } },
-    { text: "Décider seul, en faisant confiance à mon intuition et à mon autorité", scores: { VE: 3, MA: 2 } }
+  { text: "Comment prenez-vous une décision difficile ?", options: [
+    { text: "Je tranche en confiance, en m'appuyant sur mon expérience terrain et mes acquis", scores: { GA: 3, HE: 2 } },
+    { text: "Je prends le temps de m'imprégner du contexte et d'observer avant de trancher", scores: { TO: 3, NO: 2 } },
+    { text: "Je m'en tiens à des principes clairs, tout en restant ouvert à une lecture atypique", scores: { BA: 3, MA: 2 } },
+    { text: "Je décide seul, rapidement, en assumant pleinement ma position", scores: { VE: 3, BR: 2 } }
   ]},
-  { text: "Quelle compétence souhaiteriez-vous développer en priorité ?", options: [
-    { text: "Une maîtrise pointue dans un domaine technique, avec une touche de pensée latérale", scores: { TR: 3, MA: 2 } },
-    { text: "Une lecture fine des dynamiques de pouvoir et des cadres réglementaires", scores: { BA: 3, LA: 2 } },
-    { text: "L'art de la veille discrète et la capacité à porter des dossiers sensibles", scores: { NO: 3, BR: 2 } },
-    { text: "Une totale autonomie et l'envie de transmettre mon savoir-faire à d'autres", scores: { GA: 3, HE: 2 } }
+  { text: "Quel type de collègue vous inspire le plus confiance ?", options: [
+    { text: "Quelqu'un qui pèse ses mots, sait jouer sur les nuances et cultive une certaine élégance", scores: { LA: 3, TO: 2 } },
+    { text: "Une personne fidèle, discrète, avec un fort sens de la parole donnée", scores: { HE: 3, BA: 2 } },
+    { text: "Un profil atypique, qui pense différemment et garde une belle indépendance", scores: { MA: 3, GA: 2 } },
+    { text: "Un(e) expert(e) très compétent(e), qui n'hésite pas à défendre son analyse", scores: { TR: 3, BR: 2 } }
   ]},
-  { text: "Quel type de mission vous attire le plus ?", options: [
-    { text: "Démêler des situations complexes que personne ne comprend, avec une dimension presque historique", scores: { MA: 3, HE: 2 } },
-    { text: "Conduire en coulisse une transformation invisible mais profonde", scores: { LA: 3, NO: 2 } },
-    { text: "Avoir une totale latitude tout en gérant un portefeuille à fort enjeu", scores: { GA: 3, VE: 2 } },
-    { text: "Mener un combat visible, pour défendre une vision et un style fort", scores: { BR: 3, TO: 2 } }
+  { text: "Comment gérez-vous la pression et le stress ?", options: [
+    { text: "Je me concentre sur ce que je maîtrise et j'applique mes méthodes avec rigueur", scores: { NO: 3, BA: 2 } },
+    { text: "Je m'adapte au fur et à mesure, en me fiant à mon instinct", scores: { GA: 3, MA: 2 } },
+    { text: "Je garde ma posture et mon calme, indispensables à mon rôle", scores: { TO: 3, VE: 2 } },
+    { text: "Je m'appuie sur mon expérience et sur des méthodes qui ont fait leurs preuves", scores: { HE: 3, TR: 2 } }
   ]},
-  { text: "Quelle phrase résonne le plus avec votre rapport à vos pairs ?", options: [
-    { text: "Mes pairs forment une lignée que je respecte et dont je me sens le garant", scores: { HE: 3, BA: 2 } },
-    { text: "J'observe attentivement les codes de mon milieu et je m'y conforme avec discrétion", scores: { NO: 3, VE: 2 } },
-    { text: "Les rapports de force entre pairs sont la vraie matière première du pouvoir", scores: { LA: 3, BR: 2 } },
-    { text: "Je préfère les fréquentations choisies, pour partager mon expertise sans contrainte", scores: { TR: 3, GA: 2 } }
+  { text: "Quelle est votre approche d'une négociation à fort enjeu ?", options: [
+    { text: "J'arrive avec des coups d'avance inattendus, tirés d'une lecture longue du dossier", scores: { MA: 3, HE: 2 } },
+    { text: "J'observe beaucoup, je parle peu, et je suis prêt(e) à quitter la table si nécessaire", scores: { NO: 3, GA: 2 } },
+    { text: "Je calibre mon influence avec précision, en m'appuyant sur ma position", scores: { LA: 3, VE: 2 } },
+    { text: "Je m'appuie sur une analyse exhaustive et je soigne autant le fond que la forme", scores: { TR: 3, TO: 2 } }
   ]},
-  { text: "Quel rapport entretenez-vous avec le risque ?", options: [
-    { text: "Je le calcule froidement, en gardant ma marge de manœuvre", scores: { VE: 3, GA: 2 } },
-    { text: "Je le mesure à l'aune du temps long et des conséquences invisibles", scores: { HE: 3, LA: 2 } },
-    { text: "Je le perçois autrement, parfois avec un coup d'avance que les autres n'expliquent pas", scores: { MA: 3, TR: 2 } },
-    { text: "Je l'embrasse quand l'enjeu en vaut la peine, et je le revendique", scores: { TO: 3, BR: 2 } }
-  ]},
-  { text: "Quelle stratégie privilégiez-vous face à un conflit ouvert ?", options: [
-    { text: "Imposer un arbitrage clair, fondé sur les règles et des éléments objectifs", scores: { BA: 3, NO: 2 } },
-    { text: "Affronter le sujet de front, en assumant ce que j'ai à défendre comme héritage", scores: { BR: 3, HE: 2 } },
-    { text: "Documenter exhaustivement la situation et passer par les canaux institutionnels", scores: { TR: 3, VE: 2 } },
-    { text: "Laisser le conflit s'épuiser de lui-même tout en orientant subtilement son issue", scores: { LA: 3, MA: 2 } }
-  ]},
-  { text: "Quel(le) collaborateur(rice) appréciez-vous le plus dans une équipe ?", options: [
-    { text: "Discret(e), fiable, doté(e) d'une sensibilité fine à ce qui se passe vraiment", scores: { NO: 3, TO: 2 } },
-    { text: "Direct(e), engagé(e), capable d'assumer une responsabilité ou un combat", scores: { VE: 3, BR: 2 } },
-    { text: "Intègre, fiable, attaché(e) à une certaine continuité dans la maison", scores: { BA: 3, HE: 2 } },
-    { text: "Original(e), qui décale les angles et sait manier les non-dits", scores: { MA: 3, LA: 2 } }
-  ]},
-  { text: "Quelle vision du temps long structure le mieux votre carrière ?", options: [
-    { text: "Bâtir patiemment une réputation et une œuvre transmissible", scores: { HE: 3, TR: 2 } },
-    { text: "Préserver ma liberté de mouvement et la cohérence éthique de mon parcours", scores: { GA: 3, BA: 2 } },
-    { text: "Laisser une trace esthétique, parfois subtile, dont l'influence dépasse ma personne", scores: { TO: 3, NO: 2 } },
-    { text: "Tisser une toile d'influence dont les contours échappent à la plupart", scores: { LA: 3, MA: 2 } }
-  ]},
-  { text: "Quelle est votre relation aux informations confidentielles dans votre métier ?", options: [
-    { text: "Je les conserve avec une rigueur quasi archivistique, conscient(e) de leur valeur future", scores: { NO: 3, HE: 2 } },
-    { text: "Je n'aime pas les non-dits : je préfère mettre les sujets sur la table, quitte à fâcher en haut lieu", scores: { BR: 3, VE: 2 } },
-    { text: "Je les traite méthodiquement dans un cadre strict, sans le moindre écart", scores: { TR: 3, BA: 2 } },
-    { text: "Elles m'inspirent souvent des intuitions et un certain sens de la mise en scène", scores: { MA: 3, TO: 2 } }
-  ]},
-  { text: "Quelle qualité vos pairs reconnaissent-ils en vous le plus souvent ?", options: [
-    { text: "Une intégrité difficile à fléchir, parfois doublée de raisonnements inattendus", scores: { BA: 3, MA: 2 } },
-    { text: "Une autorité naturelle, doublée d'une intelligence des rapports de pouvoir", scores: { VE: 3, LA: 2 } },
-    { text: "Une discrétion à toute épreuve et une totale autonomie dans l'action", scores: { NO: 3, GA: 2 } },
-    { text: "Une énergie communicative et un sens du style très personnel", scores: { BR: 3, TO: 2 } }
-  ]},
-  { text: "Comment décririez-vous votre style de communication professionnelle ?", options: [
-    { text: "Élégante, soignée, avec un sens de la mise en scène qui sert mes intentions", scores: { TO: 3, LA: 2 } },
-    { text: "Directe et factuelle, sans fioritures, appuyée sur des éléments solides", scores: { GA: 3, TR: 2 } },
-    { text: "Mesurée, formelle quand il le faut, et toujours avec une réserve calculée", scores: { VE: 3, NO: 2 } },
-    { text: "Atypique mais argumentée, parfois déroutante mais toujours honnête", scores: { MA: 3, BA: 2 } }
-  ]},
-  { text: "Que recherchez-vous d'abord chez un mentor ou un coach ?", options: [
-    { text: "Une honnêteté brutale et le refus de toute complaisance", scores: { BA: 3, BR: 2 } },
-    { text: "Une finesse de lecture des situations et un sens du raffinement", scores: { LA: 3, TO: 2 } },
-    { text: "Le respect de mon autonomie et l'accès à un réseau de très haut niveau", scores: { GA: 3, VE: 2 } },
-    { text: "Une expertise rigoureuse, doublée d'une capacité à voir ce que les autres manquent", scores: { TR: 3, MA: 2 } }
-  ]},
-  { text: "Dans quel environnement vous sentez-vous le plus à votre place ?", options: [
-    { text: "Un milieu raffiné où les rapports de pouvoir se jouent dans la nuance", scores: { TO: 3, LA: 2 } },
-    { text: "Un cadre où l'on respecte les traditions tout en laissant respirer les individus", scores: { HE: 3, GA: 2 } },
-    { text: "Une organisation forte, structurée, qui assume ses combats", scores: { VE: 3, BR: 2 } },
-    { text: "Un environnement discret et technique, où le savoir-faire prime sur la posture", scores: { NO: 3, TR: 2 } }
-  ]},
-  { text: "Comment abordez-vous une négociation à fort enjeu ?", options: [
-    { text: "Je laisse parler les autres et je calibre mon influence avec rigueur", scores: { LA: 3, BA: 2 } },
-    { text: "Je porte fortement ma position, avec énergie et un sens du timing", scores: { BR: 3, TO: 2 } },
-    { text: "Je reste prêt(e) à quitter la table à tout moment, fort(e) de ce que j'ai déjà construit", scores: { GA: 3, HE: 2 } },
-    { text: "J'arrive avec une analyse complète et quelques coups d'avance imprévus", scores: { TR: 3, MA: 2 } }
-  ]},
-  { text: "Quel défaut professionnel reconnaissez-vous le plus volontiers ?", options: [
-    { text: "Une exigence esthétique qui peut friser l'arrogance", scores: { TO: 3, VE: 2 } },
-    { text: "Une imprévisibilité qui peut dérouter mes interlocuteurs", scores: { MA: 3, GA: 2 } },
-    { text: "Une rigueur qui peut paraître inflexible ou un peu froide", scores: { BA: 3, TR: 2 } },
-    { text: "Une tendance à trop garder pour moi, par respect d'un certain devoir de mémoire", scores: { HE: 3, NO: 2 } }
+  { text: "Quelle vision du succès vous parle le plus ?", options: [
+    { text: "Occuper une position clé où mes décisions ont un impact réel", scores: { VE: 3, LA: 2 } },
+    { text: "Avoir gardé une intégrité sans faille, y compris dans les zones grises", scores: { BA: 3, MA: 2 } },
+    { text: "Avoir préservé ma liberté de mouvement tout en développant une vraie expertise", scores: { GA: 3, TR: 2 } },
+    { text: "Avoir vraiment changé les choses, même si on ne le sait pas forcément", scores: { BR: 3, NO: 2 } }
   ]}
 ];
-// ─────────────────────────────────────────────
-// COACHES (inchangé par rapport à la version précédente)
-// ─────────────────────────────────────────────
+// ─── COACHES (inchangés) ───
 const coaches = {
   VE: { name: "Maximilien de Courtois", photo: "Coach-Maximilien de Courtois.png", specialty: "Coach Exécutif · Dirigeants & Élites", phone: "+33 (0)6 12 34 56 78", email: "m.decourtois@vagencemetier.fr", quote: "La vraie autorité ne se réclame pas. Elle se reconnaît.", bio: "Ancien directeur associé au sein d'un cabinet de conseil stratégique international, Maximilien de Courtois accompagne depuis vingt ans les dirigeants des plus grandes organisations françaises et européennes. Diplômé de l'ENA et de Sciences Po Paris, il intervient principalement auprès des PDG, directeurs généraux et membres de conseils d'administration. Sa méthode repose sur une approche rigoureuse de la gouvernance et du leadership institutionnel. Il est réputé pour sa capacité à structurer les dynamiques de pouvoir au sein des organisations complexes et à préparer ses clients aux négociations les plus délicates.", color: "#1a1a3e", initials: "MC" },
   TO: { name: "Isabelle Fontaine", photo: "Coach-Isabelle Fontaine.png", specialty: "Consultante Image & Leadership Charismatique", phone: "+33 (0)6 23 45 67 89", email: "i.fontaine@vagencemetier.fr", quote: "L'excellence est un art que l'on choisit de pratiquer chaque jour.", bio: "Isabelle Fontaine est une consultante en image et leadership charismatique de renommée internationale. Après une carrière dans l'industrie du luxe et des arts visuels à Paris et Milan, elle a fondé sa propre approche du coaching exécutif, centrée sur l'expression authentique du potentiel créatif en contexte professionnel. Elle accompagne des dirigeants issus des secteurs de la mode, de la culture, du luxe et des médias, ainsi que des personnalités publiques souhaitant affiner leur présence et leur impact. Ses séances combinent techniques de communication non verbale, travail sur l'esthétique de la présentation et développement du charisme naturel.", color: "#2e1a2e", initials: "IF" },
@@ -529,26 +446,21 @@ const coaches = {
   LA: { name: "Édouard de Noirmont", photo: "Coach-Édouard de Noirmont.png", specialty: "Conseiller Influence, Gouvernance & Stratégies d'Ombre", phone: "+33 (0)6 90 12 34 56", email: "e.denoirmont@vagencemetier.fr", quote: "Le pouvoir véritable ne cherche pas la lumière. Il la crée.", bio: "Édouard de Noirmont est l'un des conseillers les plus discrets et les plus influents du paysage français. Sa biographie officielle est délibérément lacunaire, mais son réseau couvre les sphères les plus élevées de la politique, de la finance et des médias. Consultant en gouvernance et stratégies d'influence depuis plus de vingt ans, il accompagne des dirigeants souhaitant renforcer leur positionnement institutionnel.", color: "#0a0a0a", initials: "EN" },
   HE: { name: "Sophie Delacombe", photo: "Coach-Sophie Delacombe.png", specialty: "Consultante Transmission Patrimoniale & Héritage Professionnel", phone: "+33 (0)6 01 23 45 67", email: "s.delacombe@vagencemetier.fr", quote: "Ce que nous laissons derrière nous définit infiniment plus que ce que nous avons pris.", bio: "Sophie Delacombe est une consultante spécialisée dans les problématiques de transmission d'entreprise, de continuité dynastique et d'héritage professionnel au sens large. Après une carrière dans le notariat et la banque privée, elle a développé une approche de coaching qui accompagne les dirigeants dans la construction d'un héritage professionnel et humain durable.", color: "#1a1a0a", initials: "SD" }
 };
-// ─────────────────────────────────────────────
-// STATE
-// ─────────────────────────────────────────────
+// ─── STATE ───
 let currentQuestion = 0;
 let answers = new Array(questions.length).fill(null);
 let scores = {};
 let answerLog = [];
-let isTiebreak = false;       // si on est sur la question tiebreaker
-let tiebreakClans = [];        // clans à départager
+let isTiebreak = false;
+let tiebreakClans = [];
 let tiebreakAnswer = null;
 Object.keys(CLANS).forEach(c => scores[c] = 0);
-// ─────────────────────────────────────────────
-// NAVIGATION
-// ─────────────────────────────────────────────
+// ─── NAVIGATION ───
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
   const target = document.getElementById('screen-' + id);
   target.style.display = 'block';
   target.classList.add('active');
-  // Note: no auto-scroll between questions, but we do scroll to top when changing screens
   window.scrollTo(0, 0);
 }
 function startQuiz() {
@@ -556,16 +468,12 @@ function startQuiz() {
   answers = new Array(questions.length).fill(null);
   Object.keys(CLANS).forEach(c => scores[c] = 0);
   answerLog = [];
-  isTiebreak = false;
-  tiebreakClans = [];
-  tiebreakAnswer = null;
+  isTiebreak = false; tiebreakClans = []; tiebreakAnswer = null;
   showScreen('quiz');
   renderQuestion();
 }
 function restartQuiz() { startQuiz(); }
-// ─────────────────────────────────────────────
-// QUIZ RENDERING (questions principales)
-// ─────────────────────────────────────────────
+// ─── QUIZ RENDERING ───
 function renderQuestion() {
   if (isTiebreak) { renderTiebreak(); return; }
   const q = questions[currentQuestion];
@@ -587,56 +495,36 @@ function renderQuestion() {
           </button>
         `).join('')}
       </div>
-    </div>
-  `;
+    </div>`;
   document.getElementById('questionContainer').innerHTML = html;
   const btnPrev = document.getElementById('btnPrev');
   const btnNext = document.getElementById('btnNext');
   btnPrev.disabled = currentQuestion === 0;
-  if (currentQuestion === total - 1) {
-    btnNext.textContent = 'Terminer l\'évaluation →';
-    btnNext.disabled = selectedIdx === null;
-  } else {
-    btnNext.textContent = 'Suivant →';
-    btnNext.disabled = selectedIdx === null;
-  }
+  if (currentQuestion === total - 1) { btnNext.textContent = 'Terminer l\'évaluation →'; btnNext.disabled = selectedIdx === null; }
+  else { btnNext.textContent = 'Suivant →'; btnNext.disabled = selectedIdx === null; }
 }
 function selectAnswer(idx) {
-  if (isTiebreak) {
-    tiebreakAnswer = idx;
-    // Re-render only the options to show selection (no scroll)
-    renderTiebreak();
-    return;
-  }
+  if (isTiebreak) { tiebreakAnswer = idx; renderTiebreak(); return; }
   answers[currentQuestion] = idx;
-  // Re-render only updates the question card; no window.scrollTo here
   renderQuestion();
 }
 function prevQuestion() {
-  if (isTiebreak) return; // pas de retour en arrière sur le tiebreak
+  if (isTiebreak) return;
   if (currentQuestion > 0) {
     currentQuestion--;
-    // Rollback du log et des scores associés à cette question
     if (answerLog.length > 0 && answerLog[answerLog.length - 1].qNum === currentQuestion + 1) {
       const last = answerLog.pop();
       Object.entries(last.scores).forEach(([clan, pts]) => { scores[clan] = (scores[clan] || 0) - pts; });
     }
     renderQuestion();
-    // PAS de scroll — on reste où on est
   }
 }
 function nextQuestion() {
   if (isTiebreak) {
     if (tiebreakAnswer === null) return;
-    // Applique le tiebreak
     const chosenClan = tiebreakClans[tiebreakAnswer];
-    scores[chosenClan] = (scores[chosenClan] || 0) + 100; // boost suffisant pour trancher
-    answerLog.push({
-      qNum: 'TIE',
-      qText: "Question de départage (devise)",
-      chosen: `« ${MOTTOS[chosenClan]} » → ${CLANS[chosenClan]}`,
-      scores: { [chosenClan]: 100 }
-    });
+    scores[chosenClan] = (scores[chosenClan] || 0) + 100;
+    answerLog.push({ qNum: 'TIE', qText: "Question de départage (devise)", chosen: `« ${MOTTOS[chosenClan]} » → ${CLANS[chosenClan]}`, scores: { 100 } });
     showLoading();
     return;
   }
@@ -645,40 +533,24 @@ function nextQuestion() {
   const opt = q.options[answers[currentQuestion]];
   answerLog.push({ qNum: currentQuestion + 1, qText: q.text, chosen: opt.text, scores: { ...opt.scores } });
   Object.entries(opt.scores).forEach(([clan, pts]) => { scores[clan] = (scores[clan] || 0) + pts; });
-  if (currentQuestion < questions.length - 1) {
-    currentQuestion++;
-    renderQuestion();
-    // PAS de scroll — on reste où on est
-  } else {
-    // Fin du quiz principal — check tiebreak
-    checkTiebreakOrFinish();
-  }
+  if (currentQuestion < questions.length - 1) { currentQuestion++; renderQuestion(); }
+  else { checkTiebreakOrFinish(); }
 }
-// ─────────────────────────────────────────────
-// TIEBREAK
-// ─────────────────────────────────────────────
+// ─── TIEBREAK ───
 function checkTiebreakOrFinish() {
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
   const topScore = sorted[0][1];
   const tied = sorted.filter(([_, s]) => s === topScore).map(([clan, _]) => clan);
   if (tied.length > 1) {
-    // Tiebreak nécessaire
-    isTiebreak = true;
-    tiebreakClans = tied;
-    tiebreakAnswer = null;
+    isTiebreak = true; tiebreakClans = tied; tiebreakAnswer = null;
     renderTiebreak();
-    // PAS de scroll — on reste où on est
-  } else {
-    showLoading();
-  }
+  } else { showLoading(); }
 }
 function renderTiebreak() {
-  const total = questions.length;
-  const pct = 100;
-  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressFill').style.width = '100%';
   document.getElementById('progressLabel').textContent = `Question de départage`;
   document.getElementById('quizCounter').textContent = `Départage`;
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+  const letters = ['A','B','C','D','E','F','G','H','I','J'];
   const html = `
     <div class="question-card tiebreak-card">
       <div class="question-num">Question de départage · Une dernière chose</div>
@@ -690,48 +562,33 @@ function renderTiebreak() {
           </button>
         `).join('')}
       </div>
-    </div>
-  `;
+    </div>`;
   document.getElementById('questionContainer').innerHTML = html;
   document.getElementById('btnPrev').disabled = true;
   const btnNext = document.getElementById('btnNext');
   btnNext.textContent = 'Finaliser mon profil →';
   btnNext.disabled = tiebreakAnswer === null;
 }
-// ─────────────────────────────────────────────
-// LOADING
-// ─────────────────────────────────────────────
+// ─── LOADING ───
 function showLoading() {
   showScreen('loading');
-  const steps = ['lstep1', 'lstep2', 'lstep3', 'lstep4'];
-  steps.forEach(id => { const el = document.getElementById(id); el.classList.remove('done', 'active'); });
+  const steps = ['lstep1','lstep2','lstep3','lstep4'];
+  steps.forEach(id => { const el = document.getElementById(id); el.classList.remove('done','active'); });
   document.getElementById('lstep1').classList.add('active');
   let i = 0;
   const interval = setInterval(() => {
-    if (i > 0) {
-      document.getElementById(steps[i - 1]).classList.remove('active');
-      document.getElementById(steps[i - 1]).classList.add('done');
-    }
-    if (i < steps.length) {
-      document.getElementById(steps[i]).classList.add('active');
-      i++;
-    } else {
-      clearInterval(interval);
-      setTimeout(showResult, 600);
-    }
+    if (i > 0) { document.getElementById(steps[i-1]).classList.remove('active'); document.getElementById(steps[i-1]).classList.add('done'); }
+    if (i < steps.length) { document.getElementById(steps[i]).classList.add('active'); i++; }
+    else { clearInterval(interval); setTimeout(showResult, 600); }
   }, 900);
 }
-// ─────────────────────────────────────────────
-// RESULT
-// ─────────────────────────────────────────────
+// ─── RESULT ───
 function showResult() {
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
   const topClan = sorted[0][0];
   const topScore = sorted[0][1];
-  // Pour le % de matching, on raisonne sur le score réel (hors boost tiebreak)
-  const realTopScore = Math.min(topScore, 40);
-  const maxPossible = 40;
-  const matchPct = Math.min(97, Math.round(72 + (realTopScore / maxPossible) * 25));
+  const realTopScore = Math.min(topScore, 20); // max théorique = 20
+  const matchPct = Math.min(97, Math.round(72 + (realTopScore / 20) * 25));
   const coach = coaches[topClan];
   document.getElementById('coachSpecialty').textContent = coach.specialty;
   document.getElementById('coachName').textContent = coach.name;
@@ -741,46 +598,21 @@ function showResult() {
   document.getElementById('coachBio').textContent = coach.bio;
   document.getElementById('matchPct').textContent = matchPct + '% de compatibilité';
   setTimeout(() => { document.getElementById('matchBarFill').style.width = matchPct + '%'; }, 600);
-
-  // Photo du coach : PNG en priorité, fallback SVG si absent
   const photoWrap = document.getElementById('coachPhotoWrap');
   if (coach.photo) {
     const img = document.createElement('img');
     img.src = encodeURI(coach.photo);
     img.alt = coach.name;
     img.className = 'coach-photo-img';
-    img.onerror = function() {
-      photoWrap.innerHTML = generateAvatar(coach.initials, coach.color);
-    };
-    photoWrap.innerHTML = '';
-    photoWrap.appendChild(img);
-  } else {
-    photoWrap.innerHTML = generateAvatar(coach.initials, coach.color);
-  }
-
+    img.onerror = function() { photoWrap.innerHTML = generateAvatar(coach.initials, coach.color); };
+    photoWrap.innerHTML = ''; photoWrap.appendChild(img);
+  } else { photoWrap.innerHTML = generateAvatar(coach.initials, coach.color); }
   const isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
   if (isAdmin) { showAdminPanel(topClan, sorted); }
   showScreen('result');
 }
 function generateAvatar(initials, bgColor) {
-  return `
-    <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
-      <defs>
-        <radialGradient id="avatarGrad" cx="50%" cy="30%" r="70%">
-          <stop offset="0%" stop-color="${lighten(bgColor, 40)}"/>
-          <stop offset="100%" stop-color="${bgColor}"/>
-        </radialGradient>
-      </defs>
-      <rect width="200" height="240" fill="url(#avatarGrad)"/>
-      <rect width="200" height="240" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="40"/>
-      <ellipse cx="100" cy="200" rx="70" ry="45" fill="rgba(0,0,0,0.4)"/>
-      <circle cx="100" cy="105" r="40" fill="rgba(0,0,0,0.35)"/>
-      <path d="M30 200 Q60 150 100 145 Q140 150 170 200 Z" fill="rgba(0,0,0,0.35)"/>
-      <text x="100" y="116" font-family="Georgia, serif" font-size="22" font-weight="500"
-            text-anchor="middle" fill="rgba(244,240,235,0.55)" letter-spacing="3">${initials}</text>
-      <line x1="40" y1="225" x2="160" y2="225" stroke="rgba(184,150,90,0.2)" stroke-width="1"/>
-    </svg>
-  `;
+  return `<svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;"><defs><radialGradient id="avatarGrad" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="${lighten(bgColor, 40)}"/><stop offset="100%" stop-color="${bgColor}"/></radialGradient></defs><rect width="200" height="240" fill="url(#avatarGrad)"/><rect width="200" height="240" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="40"/><ellipse cx="100" cy="200" rx="70" ry="45" fill="rgba(0,0,0,0.4)"/><circle cx="100" cy="105" r="40" fill="rgba(0,0,0,0.35)"/><path d="M30 200 Q60 150 100 145 Q140 150 170 200 Z" fill="rgba(0,0,0,0.35)"/><text x="100" y="116" font-family="Georgia, serif" font-size="22" font-weight="500" text-anchor="middle" fill="rgba(244,240,235,0.55)" letter-spacing="3">${initials}</text><line x1="40" y1="225" x2="160" y2="225" stroke="rgba(184,150,90,0.2)" stroke-width="1"/></svg>`;
 }
 function lighten(hex, amount) {
   const num = parseInt(hex.slice(1), 16);
@@ -789,9 +621,7 @@ function lighten(hex, amount) {
   const b = Math.min(255, (num & 0xff) + amount);
   return '#' + ((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1);
 }
-// ─────────────────────────────────────────────
-// ADMIN MODE (?admin=true)
-// ─────────────────────────────────────────────
+// ─── ADMIN MODE (?admin=true) ───
 function showAdminPanel(topClan, sorted) {
   const panel = document.getElementById('adminPanel');
   panel.classList.remove('hidden');
@@ -800,12 +630,9 @@ function showAdminPanel(topClan, sorted) {
   const scoresHtml = sorted.map(([clan, score]) => `
     <div class="admin-score-row">
       <span class="admin-score-name">${CLANS[clan]}</span>
-      <div class="admin-score-bar-wrap">
-        <div class="admin-score-bar ${clan === topClan ? 'top' : ''}" style="width:${Math.round((score / maxScore) * 100)}%"></div>
-      </div>
+      <div class="admin-score-bar-wrap"><div class="admin-score-bar ${clan === topClan ? 'top' : ''}" style="width:${Math.round((score / maxScore) * 100)}%"></div></div>
       <span class="admin-score-num">${score}</span>
-    </div>
-  `).join('');
+    </div>`).join('');
   document.getElementById('adminScores').innerHTML = scoresHtml;
   const mappingHtml = answerLog.map(entry => {
     const clanPts = Object.entries(entry.scores).map(([c, p]) => `${CLANS[c]}(+${p})`).join(', ');
@@ -813,9 +640,7 @@ function showAdminPanel(topClan, sorted) {
   }).join('<br><br>');
   document.getElementById('adminMapping').innerHTML = mappingHtml;
 }
-// ─────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────
+// ─── INIT ───
 document.addEventListener('DOMContentLoaded', () => {
   showScreen('home');
   const params = new URLSearchParams(window.location.search);
